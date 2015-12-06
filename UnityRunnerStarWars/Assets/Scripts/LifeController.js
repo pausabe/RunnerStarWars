@@ -20,8 +20,9 @@ function Hit(damage: int) {
 }
 
  function OnCollisionEnter (collision: Collision) {
-	//Hit(20);
+	Hit(10);
  }
+ 
 
 function Explode() {
 	var explosion = Instantiate(Explosion, transform.position, Quaternion.identity);

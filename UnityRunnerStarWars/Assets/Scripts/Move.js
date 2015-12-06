@@ -13,8 +13,7 @@ var colliding = false;
 var time = 0.0;
 
 function Start () {
-	//rigidBody = this.GetComponent.<Rigidbody>();
-	//rigidBody.velocity = Vector3(0,0,shipSpeed);
+
 }
 
 function Update () {
@@ -71,27 +70,29 @@ function FixedUpdate () {
 }
 
 function OnCollisionEnter (collision: Collision) {
-    var contact = collision.contacts[0];
-	var rb = this.GetComponent.<Rigidbody>();
-	var velocity = Vector3(rb.velocity.x, rb.velocity.y, 0);
-	var mirror = Vector3.Reflect(velocity, contact.normal);
+
+	//if (collision.collider.gameObject.tag != "Traspassable") {
+	    var contact = collision.contacts[0];
+		var rb = this.GetComponent.<Rigidbody>();
+		var velocity = Vector3(rb.velocity.x, rb.velocity.y, 0);
+		var mirror = Vector3.Reflect(velocity, contact.normal);
 //	rb.velocity.x = bounciness*Vector3.Normalize(mirror).x;rb.velocity.y = bounciness*Vector3.Normalize(mirror).y;
 	//rb.AddExplosionForce(bounciness, contact.point,0.1, 0.0, UnityEngine.ForceMode.Impulse);
 	//rb.AddForceAtPosition(Vector3(bounciness*Vector3.Normalize(mirror).x,bounciness*Vector3.Normalize(mirror).y,0.0),contact.point,UnityEngine.ForceMode.Impulse);
-	rb.AddForce(Vector3(bounciness*Vector3.Normalize(mirror).x,bounciness*Vector3.Normalize(mirror).y,0.0), UnityEngine.ForceMode.Impulse);
-	rb.angularVelocity = Vector3.zero; 
-//Debug.Log(rb.velocity);
+		rb.AddForce(Vector3(bounciness*Vector3.Normalize(mirror).x,bounciness*Vector3.Normalize(mirror).y,0.0), UnityEngine.ForceMode.Impulse);
+		rb.angularVelocity = Vector3.zero; 
 	
-	colliding = true;
-	time = Time.realtimeSinceStartup;
-	yield WaitForSeconds(0.8);
-	colliding = false;
-	rb.transform.rotation = Quaternion.identity;
-   	rb.angularVelocity = Vector3.zero; 
-
+		colliding = true;
+		time = Time.realtimeSinceStartup;
+		yield WaitForSeconds(0.8);
+		colliding = false;
+		rb.transform.rotation = Quaternion.identity;
+   		rb.angularVelocity = Vector3.zero; 
+	//} 
 	
 }
 
 function OnCollisionExit(c: Collision) {
 
 }
+

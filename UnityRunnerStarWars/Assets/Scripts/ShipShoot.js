@@ -34,8 +34,5 @@ function FireGun(gun : GameObject) {
 	//lineRenderer.SetPosition(1, ray.GetPoint(100));
     
     var rb = shot.GetComponent.<Rigidbody>();
-    rb.velocity = Vector3(0,0,ShotSpeed);
-
-	//var audio: AudioSource = GetComponent.<AudioSource>();
-	//audio.Play();
+    rb.velocity = ShotSpeed*gun.transform.forward;
 }
