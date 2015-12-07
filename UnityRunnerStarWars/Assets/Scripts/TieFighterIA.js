@@ -2,7 +2,7 @@
 
 var state : int = 0;
 var speed : float;
-var ship : GameObject;
+private var ship : GameObject;
 var shootingDistance : float;
 
 var waitingToShoot : float;
@@ -12,6 +12,7 @@ var waitingToFollow : float;
 private var time : float = 0;
 
 function Start () {
+	ship = GameObject.Find("X-wing");
 	this.transform.position = ship.transform.position + Vector3(0,0,-10);
 }
 

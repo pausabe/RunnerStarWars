@@ -10,6 +10,14 @@ public var guns : GameObject[];
 
 var gunCount : int = 0;
 
+var aimsAtShip = false;
+
+private var ship : GameObject;
+
+function Start () {
+	ship = GameObject.Find("X-wing");
+}
+
 function FireLaser() {
 		if (allGunsShoot) {
 			for (var i = 0; i < guns.length; i++) {
@@ -29,9 +37,15 @@ function FireGun(gun : GameObject) {
 	var shot = Instantiate(line, gun.transform.position, Quaternion.identity);
 
 	var lineRenderer = shot.GetComponent.<LineRenderer>();
+	var forward = gun.transform.forward;
+	//if (aimsAtShip) forward = ship.transform.position - gun.transform.position;
 	var ray = new Ray(gun.transform.position, gun.transform.forward);
 	//lineRenderer.SetPosition(0, ray.origin);
 	//lineRenderer.SetPosition(1, ray.GetPoint(100));
+  //           Vector3 newRotation = new Vector3(target.transform.eulerAngles.x, target.transform.eulerAngles.y, target.transform.eulerAngles.z);
+//         this.transform.eulerAngles = newRotation;
+
+    lineRenderer.transform.eulerAngles = gun.transform.eulerAngles;
     
     var rb = shot.GetComponent.<Rigidbody>();
     rb.velocity = ShotSpeed*gun.transform.forward;

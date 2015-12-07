@@ -32,7 +32,6 @@ function FixedUpdate () {
 	var rb = GetComponent.<Rigidbody>();
     rb.velocity.z = forwardSpeed;
 
-	if (!colliding) {
 		if (Input.GetKey(KeyCode.UpArrow)) GetComponent.<Rigidbody>().AddForce(0,speed,0);
 		//this.transform.position = this.transform.position+(Vector3(0,1,0)*Time.deltaTime*speed);
 		else if (Input.GetKey(KeyCode.DownArrow)) GetComponent.<Rigidbody>().AddForce(0,-speed,0);
@@ -50,6 +49,7 @@ function FixedUpdate () {
 			//rigidBody.angularVelocity = Vector3(0,0,shipSpeed);
 			
 		}
+	if (!colliding) {
 		
 		if (Input.GetKey(KeyCode.Q)) GetComponent.<Rigidbody>().AddRelativeTorque(0,0,rotation);
 		else if (Input.GetKey(KeyCode.E)) GetComponent.<Rigidbody>().AddRelativeTorque(0,0,-rotation);
