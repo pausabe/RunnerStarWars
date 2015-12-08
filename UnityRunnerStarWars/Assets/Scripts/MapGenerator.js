@@ -79,8 +79,7 @@ function Update () {
 	
 	if (turning != 0) {
 		turnShip();
-		Debug.Log("1");
-	} else Debug.Log("2");
+	}
 }
 
 function turnShip() {
