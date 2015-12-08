@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: 19a1c59ce73dd45648ef6e829468cb3e
+timeCreated: 1449585242
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Aparato desierto Star Wars
+    100002: Arbol seco
+    100004: Arbusto
+    100006: Arco arenisca
+    100008: Cactus
+    100010: Casa-bola
+    100012: //RootNode
+    100014: Escenario nivel 1
+    100016: Huesos
+    100018: T-fighter
+    400000: Aparato desierto Star Wars
+    400002: Arbol seco
+    400004: Arbusto
+    400006: Arco arenisca
+    400008: Cactus
+    400010: Casa-bola
+    400012: //RootNode
+    400014: Escenario nivel 1
+    400016: Huesos
+    400018: T-fighter
+    2300000: Aparato desierto Star Wars
+    2300002: Arbol seco
+    2300004: Arbusto
+    2300006: Arco arenisca
+    2300008: Cactus
+    2300010: Casa-bola
+    2300012: Escenario nivel 1
+    2300014: Huesos
+    2300016: T-fighter
+    3300000: Aparato desierto Star Wars
+    3300002: Arbol seco
+    3300004: Arbusto
+    3300006: Arco arenisca
+    3300008: Cactus
+    3300010: Casa-bola
+    3300012: Escenario nivel 1
+    3300014: Huesos
+    3300016: T-fighter
+    4300000: Escenario nivel 1
+    4300002: T-fighter
+    4300004: Arbusto
+    4300006: Cactus
+    4300008: Aparato desierto Star Wars
+    4300010: Arbol seco
+    4300012: Arco arenisca
+    4300014: Casa-bola
+    4300016: Huesos
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
