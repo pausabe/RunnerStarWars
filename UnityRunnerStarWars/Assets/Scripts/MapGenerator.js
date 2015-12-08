@@ -15,9 +15,13 @@ private var shootingTurrets = [[-1.8, 0.5,320, -1],[0.0, 0,100, 1]]; // [x,y,z]
 private var tieFighters = [[0.0, 100]]; // [x,z] in which the tie fighter will appear
 private var deathStarWalls = [[-0.2, 0.5, 200, 1.5, 1, 1]]; // [x,y,z,scaleX,scaleY,scaleZ] of the wall
 
-private var girs = [[0.0,300, -1]]; //[x,z,direction(-1:left,1:right] 
+private var girs = [[0.0,20, 1]]; //[x,z,direction(-1:left,1:right] 
 
 var forward : Vector3 = Vector3(0,0,1);
+
+var turnDuration : float;
+private var turning = 0;
+private var time : float;
 
 function Start () {
 
@@ -44,6 +48,8 @@ function Start () {
 		var wall = Instantiate(prefabs[DEATH_STAR_WALL], Vector3(deathStarWalls[i][0], deathStarWalls[i][1], deathStarWalls[i][2]), Quaternion.identity);
 		wall.transform.localScale = Vector3(deathStarWalls[i][3],deathStarWalls[i][4],deathStarWalls[i][5]);
 	}
+	
+	time = Time.realtimeSinceStartup;
 }
 
 function Update () {
@@ -60,15 +66,34 @@ function Update () {
 	for (i = 0; i < girs.length; i++) {
 		if (!(girs[i][0] == -1000 && girs[i][1] == -1000)) {
 			if (girs[i][1] <= ship.transform.position.z && ((girs[i][0]-ship.transform.position.x <= x) && (girs[i][0]-ship.transform.position.x >= -x))) {
-				ship.transform.eulerAngles.y = 90*girs[i][2];
-				cam.transform.eulerAngles.y = 90*girs[i][2];
 				ship.GetComponent.<Rigidbody>().velocity = Vector3.zero;
 				
-				forward = ship.transform.forward;
+				turning = girs[i][2];
 				
+				time = Time.realtimeSinceStartup;
 				girs[i][0] = -1000;
 				girs[i][1] = -1000;
 			}
 		}
 	}
+	
+	if (turning != 0) {
+		turnShip();
+		Debug.Log("1");
+	} else Debug.Log("2");
+}
+
+function turnShip() {
+
+	ship.transform.RotateAround(ship.transform.position, turning*Vector3(0,1,0), 90 * Time.deltaTime);
+	cam.transform.RotateAround(ship.transform.position, turning*Vector3(0,1,0), 90 * Time.deltaTime);
+	
+	if (Time.realtimeSinceStartup - time >= turnDuration) {
+		ship.transform.eulerAngles.y = 90*turning;
+		cam.transform.eulerAngles.y = 90*turning;
+	
+		forward = ship.transform.forward;
+		turning = 0;
+	}
+	
 }

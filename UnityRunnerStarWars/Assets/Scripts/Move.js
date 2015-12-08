@@ -48,6 +48,8 @@ function FixedUpdate () {
 		rb.AddForce(v);
 	}
 	*/
+		if (!colliding) {
+
 	if (Input.GetKey(KeyCode.LeftArrow))  {
 		var f = Vector3(-speed,0,0);
 		
@@ -82,7 +84,6 @@ function FixedUpdate () {
 			
 		}*/
 
-	if (!colliding) {
 		
 		if (Input.GetKey(KeyCode.Q)) GetComponent.<Rigidbody>().AddRelativeTorque(0,0,rotation);
 		else if (Input.GetKey(KeyCode.E)) GetComponent.<Rigidbody>().AddRelativeTorque(0,0,-rotation);
@@ -147,7 +148,7 @@ function OnCollisionEnter (collision: Collision) {
 	colliding = true;
 	time = Time.realtimeSinceStartup;
 
-	yield WaitForSeconds(0.8);
+	yield WaitForSeconds(0.2);
 	colliding = false;
 	//rb.transform.rotation = Quaternion.identity;
  	rb.transform.localEulerAngles = Vector3(0,transform.localEulerAngles.y, 0); 
