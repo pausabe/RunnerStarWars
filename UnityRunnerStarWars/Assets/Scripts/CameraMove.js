@@ -22,6 +22,7 @@ function Update () {
 	
 	if (ship.GetComponent.<LifeController>().isAlive()) {
 		this.transform.position = ship.transform.position;
+		this.transform.eulerAngles.y = ship.transform.eulerAngles.y;
 		this.transform.Translate(positionOffset);
 	}
 //	this.transform.Translate(ship.transform.TransformDirection(positionOffset));

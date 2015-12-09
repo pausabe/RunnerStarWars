@@ -48,30 +48,30 @@ function FixedUpdate () {
 		rb.AddForce(v);
 	}
 	*/
-		if (!colliding) {
+	if (!colliding) {
 
-	if (Input.GetKey(KeyCode.LeftArrow))  {
-		var f = Vector3(-speed,0,0);
-		
-		GetComponent.<Rigidbody>().AddRelativeForce(f);
-	} else if (Input.GetKey(KeyCode.RightArrow)) {
-		GetComponent.<Rigidbody>().AddRelativeForce(speed,0,0);
-	} else {
-		var v = Vector3(-brake*locVel.x, 0, 0);
-		rb.AddRelativeForce(v);
+		if (Input.GetKey(KeyCode.LeftArrow))  {
+			var f = Vector3(-speed,0,0);
+			
+			GetComponent.<Rigidbody>().AddRelativeForce(f);
+		} else if (Input.GetKey(KeyCode.RightArrow)) {
+			GetComponent.<Rigidbody>().AddRelativeForce(speed,0,0);
+		} else {
+			var v = Vector3(-brake*locVel.x, 0, 0);
+			rb.AddRelativeForce(v);
 
-		//rigidBody.velocity = Vector3(0,0,shipSpeed);
-		//rigidBody.angularVelocity = Vector3(0,0,shipSpeed);
+			//rigidBody.velocity = Vector3(0,0,shipSpeed);
+			//rigidBody.angularVelocity = Vector3(0,0,shipSpeed);
+			
+		}
 		
-	}
-	
-	if (Input.GetKey(KeyCode.UpArrow)) GetComponent.<Rigidbody>().AddForce(0,speed,0);
-	//this.transform.position = this.transform.position+(Vector3(0,1,0)*Time.deltaTime*speed);
-	else if (Input.GetKey(KeyCode.DownArrow)) GetComponent.<Rigidbody>().AddForce(0,-speed,0);
-	else {
-		v = Vector3(0,-brake*rb.velocity.y, 0);
-		rb.AddRelativeForce(v);
-	}
+		if (Input.GetKey(KeyCode.UpArrow)) GetComponent.<Rigidbody>().AddForce(0,speed,0);
+		//this.transform.position = this.transform.position+(Vector3(0,1,0)*Time.deltaTime*speed);
+		else if (Input.GetKey(KeyCode.DownArrow)) GetComponent.<Rigidbody>().AddForce(0,-speed,0);
+		else {
+			v = Vector3(0,-brake*rb.velocity.y, 0);
+			rb.AddRelativeForce(v);
+		}
 		/*
 		if (Input.GetKey(KeyCode.LeftArrow)) GetComponent.<Rigidbody>().AddForce(-speed,0,0);
 		else if (Input.GetKey(KeyCode.RightArrow)) GetComponent.<Rigidbody>().AddForce(speed,0,0);
