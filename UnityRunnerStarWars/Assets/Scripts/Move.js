@@ -14,21 +14,30 @@ var turnStep : float;
 
 var maxY : float;
 
+var turnCheckDistance : float;
+
+var delayBeginMoving : float;
+
+private var moving = false;
+
 private var time = 0.0;
 
 private var turning : int = 0;
 
 function Start () {
-
+	yield WaitForSeconds(delayBeginMoving);
+	moving = true;
 }
 
 function Update () {
+	if (!moving) return;
 	if (Input.GetKeyDown(KeyCode.Space)) {
 		this.GetComponent.<ShipShoot>().FireLaser();
 	}
 }
 
 function FixedUpdate () {
+	if (!moving) return;
 
 /*	if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3(0,1,0)*Time.deltaTime*speed);
 	if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3(0,-1,0)*Time.deltaTime*speed);
@@ -104,11 +113,11 @@ function FixedUpdate () {
 			transform.position.y = maxY-0.1;
 		}
 
-		if (Input.GetKey(KeyCode.Q)) {
+		if (Input.GetKey(KeyCode.Q) && CheckTurn(-1)) {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
 			turning = -1;
-		} else if (Input.GetKey(KeyCode.E)) {
+		} else if (Input.GetKey(KeyCode.E) && CheckTurn(1)) {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
 			turning = 1;
@@ -186,3 +195,10 @@ function OnCollisionEnter (collision: Collision) {
 function OnCollisionExit(c: Collision) {
 }
 
+function CheckTurn(turn : int) {
+	var map = GameObject.Find("Map").GetComponent.<MapGenerator>();
+	var forward = map.forward;
+	var newForward = Quaternion.Euler(0,90*turn,0)*forward;
+	if (Physics.Raycast(transform.position, newForward, turnCheckDistance))	return false;
+	else return true;
+}

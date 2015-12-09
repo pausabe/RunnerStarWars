@@ -21,8 +21,11 @@ function Hit(damage: int) {
 }
 
 function OnCollisionEnter (collision: Collision) {
-	Debug.Log(Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)));
-	if (collision.collider.gameObject.tag != "shot" && Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)) < 30) Explode();
+	//Debug.Log(Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)));
+	if (collision.collider.gameObject.tag != "shot" && Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)) < 50) {
+		life = -1;
+		Explode();
+	}
 	else {
 		Hit(10);
 		if (this.GetComponent.<LifeController>().isAlive()){
@@ -37,10 +40,10 @@ function Explode() {
 	//rb.AddRelativeTorque(0.5,0.2,0.3);
 	
 	var explosion = Instantiate(Explosion, transform.position, Quaternion.identity);
-	explosion.transform.parent = transform;
+	//explosion.transform.parent = transform;
 	var Smoke = explosion.transform.GetChild(1).gameObject;
 	var smoke = Smoke.GetComponent.<ParticleSystem>();
-    Destroy(gameObject, smoke.duration);
+    Destroy(gameObject);
 	
 }
 
