@@ -69,7 +69,7 @@ function Update () {
 			}
 		}
 	}
-	
+	/*
 	for (i = 0; i < girs.length; i++) {
 		if (!(girs[i].position.x == -1000 && girs[i].position.z == -1000)) {
 			if (((girs[i].position.z-ship.transform.position.z <= x) && (girs[i].position.z-ship.transform.position.z >= -x)) && ((girs[i].position.x-ship.transform.position.x <= x) && (girs[i].position.x-ship.transform.position.x >= -x))) {
@@ -108,5 +108,9 @@ function turnShip() {
 		forward = ship.transform.forward;
 		turning = 0;
 	}
-	
+	*/
+}
+
+function SetForward(f : Vector3) {
+	forward = f;
 }

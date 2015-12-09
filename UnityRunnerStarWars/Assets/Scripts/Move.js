@@ -10,10 +10,13 @@ var bounciness : float;
 
 var colliding = false;
 
-var time = 0.0;
+var turnStep : float;
 
+var maxY : float;
 
-private var Direction : int = 1; // 0: left, 1: forward, 2: right, 3: back
+private var time = 0.0;
+
+private var turning : int = 0;
 
 function Start () {
 
@@ -48,8 +51,20 @@ function FixedUpdate () {
 		rb.AddForce(v);
 	}
 	*/
-	if (!colliding) {
-
+	if (turning != 0) {					// Gir de 90 graus
+		var map = GameObject.Find("Map").GetComponent.<MapGenerator>();
+		var forward = map.forward;
+		if (Mathf.Abs(Vector3.Angle(forward, transform.forward)) >= 90) { 	// Finished turning
+			var newForward = Quaternion.Euler(0,90*turning,0)*forward;
+			map.SetForward(newForward);
+			this.transform.forward = newForward;
+			turning = 0;
+		} else {															// Turn
+			transform.RotateAround(transform.position, turning*Vector3(0,1,0), turnStep * Time.deltaTime);
+		}
+	} else if (!colliding) { 		// Moviment normal
+		
+		
 		if (Input.GetKey(KeyCode.LeftArrow))  {
 			var f = Vector3(-speed,0,0);
 			
@@ -84,10 +99,20 @@ function FixedUpdate () {
 			
 		}*/
 
-		
-		if (Input.GetKey(KeyCode.Q)) GetComponent.<Rigidbody>().AddRelativeTorque(0,0,rotation);
-		else if (Input.GetKey(KeyCode.E)) GetComponent.<Rigidbody>().AddRelativeTorque(0,0,-rotation);
-		else {
+		if (this.transform.position.y >= maxY) {
+			rb.velocity.y = 0;
+			transform.position.y = maxY-0.1;
+		}
+
+		if (Input.GetKey(KeyCode.Q)) {
+			transform.localEulerAngles.x = 0;
+			transform.localEulerAngles.z = 0;
+			turning = -1;
+		} else if (Input.GetKey(KeyCode.E)) {
+			transform.localEulerAngles.x = 0;
+			transform.localEulerAngles.z = 0;
+			turning = 1;
+		} else {
 			//var v = Vector3(-2*rb.angularVelocity.x,-2*rb.velocity.y, 0);
 			//rb.AddTorque(-2*rb.angularVelocity);
 			//rb.angularVelocity = Vector3.zero;
