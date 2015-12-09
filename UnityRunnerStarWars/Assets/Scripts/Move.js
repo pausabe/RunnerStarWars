@@ -199,6 +199,6 @@ function CheckTurn(turn : int) {
 	var map = GameObject.Find("Map").GetComponent.<MapGenerator>();
 	var forward = map.forward;
 	var newForward = Quaternion.Euler(0,90*turn,0)*forward;
-	if (Physics.Raycast(transform.position, newForward, turnCheckDistance))	return false;
+	if (Physics.Raycast(transform.position+transform.TransformDirection(0,0,4), newForward, turnCheckDistance))	return false;
 	else return true;
 }
