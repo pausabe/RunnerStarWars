@@ -21,20 +21,20 @@ function Hit(damage: int) {
 }
 
 function OnCollisionEnter (collision: Collision) {
+	Hit(10);
+	if (this.GetComponent.<LifeController>().isAlive()){
+		var explosion = Instantiate(shotExplosion, collision.contacts[0].point, transform.rotation);
+		explosion.transform.parent = transform;
+	}
+}
+
+function OnCollisionStay (collision: Collision) {
 	//Debug.Log(Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)));
 	if (collision.collider.gameObject.tag != "shot" && Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)) < 50) {
 		life = -1;
 		Explode();
 	}
-	else {
-		Hit(10);
-		if (this.GetComponent.<LifeController>().isAlive()){
-			var explosion = Instantiate(shotExplosion, collision.contacts[0].point, transform.rotation);
-			explosion.transform.parent = transform;
-		}
-	}
 }
-
 function Explode() {
 	var rb = this.GetComponent.<Rigidbody>();
 	//rb.AddRelativeTorque(0.5,0.2,0.3);

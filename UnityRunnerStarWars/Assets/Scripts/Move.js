@@ -16,6 +16,8 @@ var maxY : float;
 
 var turnCheckDistance : float;
 
+var forwardPositionCheckTurn : float;
+
 var delayBeginMoving : float;
 
 private var moving = false;
@@ -70,6 +72,7 @@ function FixedUpdate () {
 			turning = 0;
 		} else {															// Turn
 			transform.RotateAround(transform.position, turning*Vector3(0,1,0), turnStep * Time.deltaTime);
+			this.transform.localEulerAngles = Vector3(locVel.y * - tiltY, transform.localEulerAngles.y, locVel.x * tiltX);
 		}
 	} else if (!colliding) { 		// Moviment normal
 		
@@ -199,6 +202,6 @@ function CheckTurn(turn : int) {
 	var map = GameObject.Find("Map").GetComponent.<MapGenerator>();
 	var forward = map.forward;
 	var newForward = Quaternion.Euler(0,90*turn,0)*forward;
-	if (Physics.Raycast(transform.position+transform.TransformDirection(0,0,4), newForward, turnCheckDistance))	return false;
+	if (Physics.Raycast(transform.position+transform.TransformDirection(0,0,forwardPositionCheckTurn), newForward, turnCheckDistance))	return false;
 	else return true;
 }

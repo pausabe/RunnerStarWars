@@ -16,7 +16,7 @@ function Update () {
      var lookDir = v;
      v.y += camHeight;
     // this.transform.position = ship.transform.position + v;
-
+	
 	//this.transform.position = ship.transform.position + positionOffset;
 	//this.transform.rotation = Quaternion.LookRotation(Vector3(0,0,1), ship.transform.up);
 	
