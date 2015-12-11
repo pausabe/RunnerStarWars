@@ -27,7 +27,12 @@ private var time = 0.0;
 private var turning : int = 0;
 
 function Start () {
+
+
+	
 	yield WaitForSeconds(delayBeginMoving);
+
+
 	moving = true;
 }
 
