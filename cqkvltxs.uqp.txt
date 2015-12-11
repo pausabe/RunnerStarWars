@@ -1,0 +1,150 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	UnityRunnerStarWars/Assets/Scenes/PrimerNivellAmbObstacles.unity
+#	UnityRunnerStarWars/Assets/Scripts/Move.js
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 5 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   UnityRunnerStarWars/Assets/Materials/Brown_3.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/0000-0050.mp4
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/0000-0050.mp4.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Arenisca-Arco.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Arenisca-Arco.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Bone.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Bone.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Clay.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Clay.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Cortina.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Cortina.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/IronRed.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/IronRed.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Sandsone2.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Sandsone2.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Sandstone.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Sandstone.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Arbol.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Arbol.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Arbusto.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Arbusto.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Hueso.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Hueso.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura cactus.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura cactus.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura casa bola.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura casa bola.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura-Aaparato Star wars.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura-Aaparato Star wars.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TextureMultiPlane.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TextureMultiPlane.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TieFighter Side.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TieFighter Side.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TieFighter front 1.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TieFighter front 1.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TieFighter front.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TieFighter front.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TreeTextureDesert.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/TreeTextureDesert.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/bush.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/bush.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/cactus.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/cactus.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/0000-0050.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/0000-0050.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/0000-50.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/0000-50.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Arenisca-Arco.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Bone.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Clay.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Cortina.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/IronRed.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Sandsone2.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Sandstone.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Textura Arbol.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Textura Arbusto.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Textura Hueso.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Textura cactus.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Textura casa bola.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/Textura-Aaparato Star wars.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TextureMultiPlane 1.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TextureMultiPlane 1.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TextureMultiPlane.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TieFighter Side.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TieFighter front 1.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TieFighter front.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/TreeTextureDesert.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/bush.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Materials/cactus.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/X-wing.controller
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/X-wing.controller.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/Main Camera.controller
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/Main Camera.controller.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/X-wing.controller
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/X-wing.controller.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/cameraAnim1.anim
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/cameraAnim1.anim.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/nauAnim1.anim
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/animations/nauAnim1.anim.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/asdf.anim
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/asdf.anim.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/asdfasdf.anim
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/asdfasdf.anim.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/backgroundSound.mp3
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/backgroundSound.mp3.meta
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/peliculaM.mat
+#	new file:   UnityRunnerStarWars/Assets/PrimerNivell/peliculaM.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/skyboxPrimerNivell.mat
+#	new file:   UnityRunnerStarWars/Assets/Scenes/Materials.meta
+#	new file:   UnityRunnerStarWars/Assets/Scenes/Materials/TextureMultiPlane.mat
+#	new file:   UnityRunnerStarWars/Assets/Scenes/Materials/TextureMultiPlane.mat.meta
+#	modified:   UnityRunnerStarWars/Assets/Scenes/PrimerNivell.unity
+#	modified:   UnityRunnerStarWars/Assets/Scenes/Scene.unity
+#	modified:   UnityRunnerStarWars/Assets/Scenes/sceneProvesPau.unity
+#	new file:   UnityRunnerStarWars/Assets/Scenes/segonNivell.unity
+#	new file:   UnityRunnerStarWars/Assets/Scenes/segonNivell.unity.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/AsteroidTexture1.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/AsteroidTexture1.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/Deathsartexture1.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/Deathsartexture1.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/RockTexture1.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/RockTexture1.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/SuspendSand Texture1.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/SuspendSand Texture1.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/Textura Nau 2048x2048.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/Textura Nau 2048x2048.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/TieFighter Side.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/TieFighter Side.mat.meta
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/TieFighter front.mat
+#	new file:   UnityRunnerStarWars/Assets/segonNivell/Materials/TieFighter front.mat.meta
+#
+# Changes not staged for commit:
+#	modified:   UnityRunnerStarWars/Assets/Scripts/Move.js
+#
+# Untracked files:
+#	UnityRunnerStarWars/Assets/Skyboxes.meta
+#	UnityRunnerStarWars/Assets/Skyboxes/
+#	UnityRunnerStarWars/Assets/segonNivell/Nivell2Scenario.fbx
+#	UnityRunnerStarWars/Assets/segonNivell/Nivell2Scenario.fbx.meta
+#	UnityRunnerStarWars/Assets/segonNivell/textures N2.meta
+#	UnityRunnerStarWars/Assets/segonNivell/textures N2/
+#
+
