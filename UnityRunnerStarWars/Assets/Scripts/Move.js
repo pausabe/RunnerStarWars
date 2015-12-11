@@ -29,6 +29,7 @@ private var time = 0.0;
 private var turning : int = 0;
 
 function Start () {
+<<<<<<< HEAD
 	if (difficulty == 1) {
 		forwardSpeed = 10;
 		turnCheckDistance = 8;
@@ -42,7 +43,14 @@ function Start () {
 		turnCheckDistance = 0;
 		forwardPositionCheckTurn = 0;
 	}
+=======
+
+
+	
+>>>>>>> origin/master
 	yield WaitForSeconds(delayBeginMoving);
+
+
 	moving = true;
 }
 
