@@ -6,6 +6,10 @@ var Explosion : GameObject;
 var shotExplosion : GameObject;
 
 function Start () {
+	//    var tag = this.tag;
+    
+    //yield WaitForSeconds(2);
+    //if (tag == "Player") Application.LoadLevel(1);
 
 }
 
@@ -37,14 +41,13 @@ function OnCollisionStay (collision: Collision) {
 }
 function Explode() {
 	var rb = this.GetComponent.<Rigidbody>();
-	//rb.AddRelativeTorque(0.5,0.2,0.3);
 	
 	var explosion = Instantiate(Explosion, transform.position, Quaternion.identity);
 	//explosion.transform.parent = transform;
 	var Smoke = explosion.transform.GetChild(1).gameObject;
 	var smoke = Smoke.GetComponent.<ParticleSystem>();
-    Destroy(gameObject);
-	
+	Destroy(gameObject);
+
 }
 
 function isAlive() {

@@ -20,6 +20,8 @@ var forwardPositionCheckTurn : float;
 
 var delayBeginMoving : float;
 
+var difficulty : int;
+
 private var moving = false;
 
 private var time = 0.0;
@@ -27,6 +29,19 @@ private var time = 0.0;
 private var turning : int = 0;
 
 function Start () {
+	if (difficulty == 1) {
+		forwardSpeed = 10;
+		turnCheckDistance = 8;
+		forwardPositionCheckTurn = 4;
+	} else if (difficulty == 2) {
+		forwardSpeed = 15;
+		turnCheckDistance = 8;
+		forwardPositionCheckTurn = 6;
+	} else if (difficulty == 3) {
+		forwardSpeed = 20;
+		turnCheckDistance = 0;
+		forwardPositionCheckTurn = 0;
+	}
 	yield WaitForSeconds(delayBeginMoving);
 	moving = true;
 }

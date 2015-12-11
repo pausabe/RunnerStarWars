@@ -60,12 +60,14 @@ function Start () {
 }
 
 function Update () {
-	for (var i = 0; i < tieFighters.length; i++) {
-		if (!(tieFighters[i][0] == -1000 && tieFighters[i][1] == -1000)) {
-			if (tieFighters[i][1] <= ship.transform.position.z && ((tieFighters[i][0]-ship.transform.position.x <= x) && (tieFighters[i][0]-ship.transform.position.x >= -x))) {
-				Instantiate(prefabs[TIE_FIGHTER], Vector3(tieFighters[i][0], ship.transform.position.y, tieFighters[i][1]), this.transform.rotation);
-				tieFighters[i][0] = -1000;
-				tieFighters[i][1] = -1000;
+	if (ship) {
+		for (var i = 0; i < tieFighters.length; i++) {
+			if (!(tieFighters[i][0] == -1000 && tieFighters[i][1] == -1000)) {
+				if (tieFighters[i][1] <= ship.transform.position.z && ((tieFighters[i][0]-ship.transform.position.x <= x) && (tieFighters[i][0]-ship.transform.position.x >= -x))) {
+					Instantiate(prefabs[TIE_FIGHTER], Vector3(tieFighters[i][0], ship.transform.position.y, tieFighters[i][1]), this.transform.rotation);
+					tieFighters[i][0] = -1000;
+					tieFighters[i][1] = -1000;
+				}
 			}
 		}
 	}
@@ -109,6 +111,14 @@ function turnShip() {
 		turning = 0;
 	}
 	*/
+	
+	if (Input.GetKeyDown(KeyCode.R)) 
+		Reload();
+}
+
+function Reload() {
+	//yield WaitForSeconds(2);
+	Application.LoadLevel(1);
 }
 
 function SetForward(f : Vector3) {
