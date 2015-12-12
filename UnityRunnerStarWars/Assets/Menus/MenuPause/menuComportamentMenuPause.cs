@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class menuComportamentMenuPostMortem : MonoBehaviour {
+public class menuComportamentMenuPause : MonoBehaviour {
 
 	//public Canvas menu;
 	//public Button restartText;
@@ -16,7 +16,7 @@ public class menuComportamentMenuPostMortem : MonoBehaviour {
 		//restartText = restartText.GetComponent<Button> ();
 		//exitText = exitText.GetComponent<Button> ();
 		//menu.enabled = false;
-		//gameObject.SetActive(false);
+
 	}
 	
 
