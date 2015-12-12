@@ -42,12 +42,6 @@ function Start () {
 		turnCheckDistance = 0;
 		forwardPositionCheckTurn = 0;
 	}
-<<<<<<< HEAD
-=======
-
-
-	
->>>>>>> origin/master
 	yield WaitForSeconds(delayBeginMoving);
 
 
@@ -72,7 +66,7 @@ function FixedUpdate () {
 	var rb = GetComponent.<Rigidbody>();
 	var locVel = transform.InverseTransformDirection(rb.velocity);
    	locVel.z = forwardSpeed;
-   	rb.velocity = transform.TransformDirection(locVel);
+	rb.velocity = transform.TransformDirection(locVel);
 
     //rb.velocity.z = forwardSpeed;//this.transform.forward;
     //Debug.Log(this.transform.forward);
@@ -99,13 +93,13 @@ function FixedUpdate () {
 		}
 	} else if (!colliding) { 		// Moviment normal
 		
-		
 		if (Input.GetKey(KeyCode.LeftArrow))  {
 			var f = Vector3(-speed,0,0);
-			
 			GetComponent.<Rigidbody>().AddRelativeForce(f);
+			//locVel.x = 0;
 		} else if (Input.GetKey(KeyCode.RightArrow)) {
 			GetComponent.<Rigidbody>().AddRelativeForce(speed,0,0);
+			//locVel.x = 0;
 		} else {
 			var v = Vector3(-brake*locVel.x, 0, 0);
 			rb.AddRelativeForce(v);
@@ -189,6 +183,7 @@ function FixedUpdate () {
 		//rb.AddRelativeForce(v1);
      	rb.transform.localEulerAngles = Vector3(0,transform.localEulerAngles.y, Mathf.Sin((time-Time.realtimeSinceStartup)*15) * 15); 
 	}
+
 
 }
 
