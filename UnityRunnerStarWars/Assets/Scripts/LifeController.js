@@ -10,7 +10,6 @@ function Start () {
     
     //yield WaitForSeconds(2);
     //if (tag == "Player") Application.LoadLevel(1);
-
 }
 
 function Update () {
@@ -33,10 +32,14 @@ function OnCollisionEnter (collision: Collision) {
 }
 
 function OnCollisionStay (collision: Collision) {
+		
+
 	//Debug.Log(Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)));
 	if (collision.collider.gameObject.tag != "shot" && Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)) < 50) {
 		life = -1;
 		Explode();
+		
+		
 	}
 }
 function Explode() {
@@ -46,6 +49,8 @@ function Explode() {
 	//explosion.transform.parent = transform;
 	var Smoke = explosion.transform.GetChild(1).gameObject;
 	var smoke = Smoke.GetComponent.<ParticleSystem>();
+	
+	
 	Destroy(gameObject);
 
 }
