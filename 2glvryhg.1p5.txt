@@ -1,0 +1,63 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	UnityRunnerStarWars/Assets/Scenes/segonNivell.unity
+#	UnityRunnerStarWars/Assets/Scripts/Move.js
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/animations/Main Camera.controller -> UnityRunnerStarWars/Assets/Materials/Nau GRAN del escenari.controller
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/animations/Main Camera.controller.meta -> UnityRunnerStarWars/Assets/Materials/Nau GRAN del escenari.controller.meta
+#	modified:   UnityRunnerStarWars/Assets/PrimerNivell/Circuit Prova 2.fbm/Materials/Textura Hueso.mat
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/animations/X-wing.controller
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/animations/X-wing.controller.meta
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/animations/cameraAnim1.anim
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/animations/nauAnim1.anim
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/animations/nauAnim1.anim.meta
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/asdf.anim.meta
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/asdfasdf.anim
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/asdfasdf.anim.meta
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/peliculaM.mat.meta
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/skyboxPrimerNivell.mat
+#	deleted:    UnityRunnerStarWars/Assets/PrimerNivell/skyboxPrimerNivell.mat.meta
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/0000-0050.mp4 -> UnityRunnerStarWars/Assets/PrimerNivell/videoTest.mp4
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/0000-0050.mp4.meta -> UnityRunnerStarWars/Assets/PrimerNivell/videoTest.mp4.meta
+#	modified:   UnityRunnerStarWars/Assets/Scenes/PrimerNivell.unity
+#	modified:   UnityRunnerStarWars/Assets/Scenes/PrimerNivell.unity.meta
+#	modified:   UnityRunnerStarWars/Assets/Scenes/PrimerNivellAmbObstacles.unity
+#	modified:   UnityRunnerStarWars/Assets/Scenes/PrimerNivellAmbObstacles.unity.meta
+#	modified:   UnityRunnerStarWars/Assets/Scripts/Move.js
+#	new file:   UnityRunnerStarWars/Assets/Scripts/PlayVideo.cs
+#	new file:   UnityRunnerStarWars/Assets/Scripts/PlayVideo.cs.meta
+#	new file:   UnityRunnerStarWars/Assets/Scripts/stopVideo.js
+#	new file:   UnityRunnerStarWars/Assets/Scripts/stopVideo.js.meta
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/peliculaM.mat -> UnityRunnerStarWars/Assets/Skyboxes/SkyBox Volume 2/DeepSpaceBlueWithPlanet/DSBWP.mat
+#	modified:   UnityRunnerStarWars/Assets/Skyboxes/SkyBox Volume 2/DeepSpaceGreenWithPlanet/DSGWP.mat
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/animations.meta -> UnityRunnerStarWars/Assets/segonNivell/animacions.meta
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/asdf.anim -> UnityRunnerStarWars/Assets/segonNivell/animacions/animacioNauGran.anim
+#	renamed:    UnityRunnerStarWars/Assets/PrimerNivell/animations/cameraAnim1.anim.meta -> UnityRunnerStarWars/Assets/segonNivell/animacions/animacioNauGran.anim.meta
+#	modified:   UnityRunnerStarWars/ProjectSettings/EditorBuildSettings.asset
+#	modified:   UnityRunnerStarWars/ProjectSettings/ProjectSettings.asset
+#	modified:   UnityRunnerStarWars/ProjectSettings/ProjectVersion.txt
+#	deleted:    UnityRunnerStarWars/build.app/Contents/Resources/KeyConfig.nib/classes.nib
+#	deleted:    UnityRunnerStarWars/build.app/Contents/Resources/KeyConfig.nib/info.nib
+#	deleted:    UnityRunnerStarWars/build.app/Contents/Resources/MainMenu.nib/classes.nib
+#	deleted:    UnityRunnerStarWars/build.app/Contents/Resources/MainMenu.nib/info.nib
+#	deleted:    UnityRunnerStarWars/build.app/Contents/Resources/ScreenSelector.nib/classes.nib
+#	deleted:    UnityRunnerStarWars/build.app/Contents/Resources/ScreenSelector.nib/info.nib
+#
+
