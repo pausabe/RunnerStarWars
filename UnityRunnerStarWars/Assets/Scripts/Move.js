@@ -42,6 +42,12 @@ function Start () {
 		turnCheckDistance = 0;
 		forwardPositionCheckTurn = 0;
 	}
+<<<<<<< HEAD
+=======
+
+
+	
+>>>>>>> origin/master
 	yield WaitForSeconds(delayBeginMoving);
 
 
