@@ -2,6 +2,10 @@
 
 var AsteroidsPrefab : GameObject[];
 
+var ForceVortexLine : GameObject;
+
+var ForceVortexLineNumber : int;
+
 var AsteroidsNumber : int;
 
 var AsteroidsGenerationRate : int;
@@ -12,7 +16,7 @@ function Start () {
 	for (var i = 0; i < AsteroidsNumber; i++) {
 		var asteroid = Random.Range(0,2);
 		
-		var position = ship.transform.position + Vector3(Random.Range(-10,10), Random.Range(-10,10), Random.Range(0,2000));
+		var position = ship.transform.position + Vector3(Random.Range(-10,10), Random.Range(-10,10), Random.Range(100,2000));
 		
 		var scale = Random.Range(0, 1.8);
 		
@@ -24,6 +28,13 @@ function Start () {
 		var torque = Vector3(Random.Range(-2,2), Random.Range(-2,2), Random.Range(-3,3));
 		ast.GetComponent.<Rigidbody>().AddTorque(torque);
 
+	}
+	for (i = 0; i < ForceVortexLineNumber; i++) {
+		position = ship.transform.position + Vector3(Random.Range(-10,10), Random.Range(-10,10), Random.Range(100,2000));
+		
+		//var scale = Random.Range(0, 1.8);
+		
+		Instantiate(ForceVortexLine, position, Quaternion.identity);
 	}
 }
 
