@@ -93,11 +93,11 @@ function FixedUpdate () {
 		}
 	} else if (!colliding) { 		// Moviment normal
 		
-		if (Input.GetKey(KeyCode.LeftArrow))  {
+		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))  {
 			var f = Vector3(-speed,0,0);
 			GetComponent.<Rigidbody>().AddRelativeForce(f);
 			//locVel.x = 0;
-		} else if (Input.GetKey(KeyCode.RightArrow)) {
+		} else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
 			GetComponent.<Rigidbody>().AddRelativeForce(speed,0,0);
 			//locVel.x = 0;
 		} else {
@@ -109,9 +109,9 @@ function FixedUpdate () {
 			
 		}
 		
-		if (Input.GetKey(KeyCode.UpArrow)) GetComponent.<Rigidbody>().AddForce(0,speed,0);
+		if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) GetComponent.<Rigidbody>().AddForce(0,speed,0);
 		//this.transform.position = this.transform.position+(Vector3(0,1,0)*Time.deltaTime*speed);
-		else if (Input.GetKey(KeyCode.DownArrow)) GetComponent.<Rigidbody>().AddForce(0,-speed,0);
+		else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) GetComponent.<Rigidbody>().AddForce(0,-speed,0);
 		else {
 			v = Vector3(0,-brake*rb.velocity.y, 0);
 			rb.AddRelativeForce(v);
@@ -137,10 +137,13 @@ function FixedUpdate () {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
 			turning = -1;
+			GetComponent.<AudioSource>().Play();
+			
 		} else if (Input.GetKey(KeyCode.E) && CheckTurn(1)) {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
 			turning = 1;
+			GetComponent.<AudioSource>().Play();
 		} else {
 			//var v = Vector3(-2*rb.angularVelocity.x,-2*rb.velocity.y, 0);
 			//rb.AddTorque(-2*rb.angularVelocity);

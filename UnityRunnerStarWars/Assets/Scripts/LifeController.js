@@ -24,24 +24,23 @@ function Hit(damage: int) {
 }
 
 function OnCollisionEnter (collision: Collision) {
-	Hit(10);
-	if (this.GetComponent.<LifeController>().isAlive()){
-		var explosion = Instantiate(shotExplosion, collision.contacts[0].point, transform.rotation);
-		explosion.transform.parent = transform;
+	if (!(this.tag == "Player" && GetComponent.<ForceController>().protectionOn)) { 
+		if (collision.contacts[0].otherCollider.tag == "Asteroid") Hit(Random.Range(28,35)); 
+		else Hit(Random.Range(8,12));
+		if (this.GetComponent.<LifeController>().isAlive()){
+			var explosion = Instantiate(shotExplosion, collision.contacts[0].point, transform.rotation);
+			explosion.transform.parent = transform;
+		}
 	}
 }
 
 function OnCollisionStay (collision: Collision) {
-		
-
-	//Debug.Log(Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)));
 	if (collision.collider.gameObject.tag != "shot" && Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)) < 50) {
 		life = -1;
-		Explode();
-		
-		
+		Explode();		
 	}
 }
+
 function Explode() {
 	var rb = this.GetComponent.<Rigidbody>();
 	
