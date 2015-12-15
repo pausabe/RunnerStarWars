@@ -32,9 +32,9 @@ function Start () {
 	particleEffect.transform.position.y = y/2+turret3.position.y;
 	//particleEffect.shape.
 	
-	var so = new SerializedObject(particleEffect);
- 	so.FindProperty("ShapeModule.boxy").floatValue = y- 0.5;
- 	so.ApplyModifiedProperties();
+	//var so = new SerializedObject(particleEffect);
+ 	//so.FindProperty("ShapeModule.boxy").floatValue = y- 0.5;
+ 	//so.ApplyModifiedProperties();
 
 }
 
