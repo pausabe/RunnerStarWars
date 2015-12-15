@@ -4,7 +4,7 @@ using System.Collections;
 
 public class menuComportamentMenuPause : MonoBehaviour {
 
-	//public Canvas menu;
+	private Canvas menu;
 	//public Button restartText;
 	//public Button exitText;
 
@@ -12,7 +12,7 @@ public class menuComportamentMenuPause : MonoBehaviour {
 	void Start () {
 		//gameObject.SetActive(false);
 
-		//menu = menu.GetComponent<Canvas> ();
+		menu = this.GetComponent<Canvas> ();
 		//restartText = restartText.GetComponent<Button> ();
 		//exitText = exitText.GetComponent<Button> ();
 		//menu.enabled = false;
@@ -33,7 +33,9 @@ public class menuComportamentMenuPause : MonoBehaviour {
 	}
 
 	public void resumeLevel(){
-		gameObject.SetActive(false);
+		//gameObject.SetActive(false);
+		Time.timeScale = 1;
+		menu.enabled = false;
 	}
 
 	public void StartLevel(){

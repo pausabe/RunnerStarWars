@@ -22,6 +22,8 @@ var delayBeginMoving : float;
 
 var difficulty : int;
 
+var videoFinal : GameObject;
+
 private var moving = false;
 
 private var time = 0.0;
@@ -42,10 +44,14 @@ function Start () {
 		turnCheckDistance = 0;
 		forwardPositionCheckTurn = 0;
 	}
+
+	if (videoFinal) videoFinal.SetActive(false);
+	
 	yield WaitForSeconds(delayBeginMoving);
 
 
 	moving = true;
+	
 }
 
 function Update () {
@@ -128,11 +134,6 @@ function FixedUpdate () {
 			
 		}*/
 
-		if (this.transform.position.y >= maxY) {
-			rb.velocity.y = 0;
-			transform.position.y = maxY-0.1;
-		}
-
 		if (Input.GetKey(KeyCode.Q) && CheckTurn(-1)) {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
@@ -187,7 +188,19 @@ function FixedUpdate () {
      	rb.transform.localEulerAngles = Vector3(0,transform.localEulerAngles.y, Mathf.Sin((time-Time.realtimeSinceStartup)*15) * 15); 
 	}
 
+	if (videoFinal) CheckEnd();
+}
 
+function CheckEnd() {
+	var x = 76;
+	var z = -21;
+	var pos = transform.position;
+	if (pos.x >= x && (pos.z >= 14 && pos.z < 26)) {
+	//yield WaitForSeconds(3);
+		videoFinal.SetActive(true);
+		yield WaitForSeconds(5);
+		Application.LoadLevel(2);
+	}
 }
 
 function OnCollisionEnter (collision: Collision) {
