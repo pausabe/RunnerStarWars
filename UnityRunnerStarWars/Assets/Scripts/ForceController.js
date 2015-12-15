@@ -6,6 +6,8 @@ var timeProtectionOn : float;
 
 var protectionOn = false;
 
+var AbsorveForce : AudioClip;
+
 private var time : float;
 
 private var SphereProtection : GameObject;
@@ -37,5 +39,6 @@ function OnTriggerEnter(collider : Collider) {
 	if (collider.gameObject.tag == "ForceVortex") {
 		Force += 10;
 		Destroy(collider.gameObject);
+		AudioSource.PlayClipAtPoint(AbsorveForce, transform.position);
 	}
 }

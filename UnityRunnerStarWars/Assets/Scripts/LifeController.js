@@ -24,6 +24,7 @@ function Hit(damage: int) {
 }
 
 function OnCollisionEnter (collision: Collision) {
+	if (this.tag == "Asteroid" && collision.contacts[0].otherCollider.tag != "shot") return;
 	if (!(this.tag == "Player" && GetComponent.<ForceController>().protectionOn)) { 
 		if (collision.contacts[0].otherCollider.tag == "Asteroid") Hit(Random.Range(28,35)); 
 		else Hit(Random.Range(8,12));
@@ -35,6 +36,7 @@ function OnCollisionEnter (collision: Collision) {
 }
 
 function OnCollisionStay (collision: Collision) {
+	if (this.tag == "Asteroid" && collision.contacts[0].otherCollider.tag != "shot") return;
 	if (collision.collider.gameObject.tag != "shot" && Mathf.Abs(Vector3.Angle(collision.contacts[0].normal, -transform.forward)) < 50) {
 		life = -1;
 		Explode();		
@@ -48,6 +50,7 @@ function Explode() {
 	//explosion.transform.parent = transform;
 	var Smoke = explosion.transform.GetChild(1).gameObject;
 	var smoke = Smoke.GetComponent.<ParticleSystem>();
+	explosion.transform.localScale = this.transform.localScale;
 	
 	
 	Destroy(gameObject);
