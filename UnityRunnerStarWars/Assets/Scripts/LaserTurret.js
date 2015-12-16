@@ -13,6 +13,8 @@ var timeOff : float;
 
 var delayStart : float;
 
+var intermitent = false;
+
 private var time : float;
 
 private var particleEffect : ParticleSystem;
@@ -26,21 +28,21 @@ function Start () {
 	line.SetPosition(0, pos1);
 	line.SetPosition(1, pos2);
 	line.SetWidth(y,y);
-	time = Time.realtimeSinceStartup;
 	
 	particleEffect = transform.GetChild(2).GetComponent.<ParticleSystem>();// GetComponent.<ParticleSystem>();
 	particleEffect.transform.position.y = y/2+turret3.position.y;
-	//particleEffect.shape.
+	//particleEffect.shape.	
 	
-	var so = new SerializedObject(particleEffect);
- 	so.FindProperty("ShapeModule.boxy").floatValue = y- 0.5;
- 	so.ApplyModifiedProperties();
-
+	if (delayStart != 0) Delay();
+	else time = Time.realtimeSinceStartup;
 }
 
 function Update () {
-	if (delayStart != 0) Delay();
-	Show();
+	if (intermitent) Show();
+	else {
+		line.enabled = true;
+		particleEffect.enableEmission = true;
+	}
 }
 
 function Delay() {
@@ -49,7 +51,7 @@ function Delay() {
 	yield WaitForSeconds(delayStart);
 	line.enabled = true;
 	particleEffect.enableEmission = true;
-	
+	time = Time.realtimeSinceStartup;
 }
 
 function Show() {

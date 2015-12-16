@@ -12,13 +12,15 @@ var waitingToShoot : float;
  
 var aimZ : float;
 
+var visible = true;
+
 private var time : float;
 private var up : Vector3;
 
 function Start () {
 	ship = GameObject.Find("X-wing");
 	time = Time.realtimeSinceStartup;
-	
+	/*
 	if (this.transform.rotation.eulerAngles.z == 0) { 
 		up = Vector3(0,1,0);
 	} else if (this.transform.rotation.eulerAngles.z == 270) {
@@ -26,16 +28,20 @@ function Start () {
 //		this.transform.rotation.eulerAngles.z = 0;
 	} else { 
 		up = Vector3(-1,0,0);
-	}
+	}*/
+	GetComponent.<Renderer>().enabled = visible;
 }
 
 function Update () {
 	//guns.transform.LookAt(ship.transform.position);
+	
+	if (!ship) return;
+	
 	var shotSpeed = this.GetComponent.<ShipShoot>().ShotSpeed;
 	var shipSpeed = ship.GetComponent.<Move>().forwardSpeed;
 	
 	var point = ship.transform.position + Vector3(0,0,aimZ);
-
+	up = this.transform.up;
 	if (up == Vector3(0,1,0)) {
 		var z = Mathf.Abs(point.z - guns.transform.position.z); 
 		var y = Mathf.Abs(point.y - guns.transform.position.y);
@@ -48,7 +54,7 @@ function Update () {
 		z = Mathf.Abs(point.z - guns.transform.position.z);
 		angle = Mathf.Atan(z/x);
 
-		guns.transform.localEulerAngles.x = angle*Mathf.Rad2Deg - angleVariationInWall;
+		guns.transform.localEulerAngles.z = angle*Mathf.Rad2Deg - angleVariationInWall;
 		//guns.transform.localEulerAngles.x = Mathf.Asin(shipSpeed/shotSpeed);
 	}	
 		

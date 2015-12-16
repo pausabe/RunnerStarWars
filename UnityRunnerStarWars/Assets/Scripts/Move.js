@@ -8,11 +8,12 @@ var forwardSpeed : float;
 var brake : float;
 var bounciness : float;
 
+
 var colliding = false;
 
 var turnStep : float;
 
-var maxY : float;
+var turnsActivated = true;
 
 var turnCheckDistance : float;
 
@@ -63,7 +64,7 @@ function Update () {
 
 function FixedUpdate () {
 	if (!moving) return;
-
+	
 /*	if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3(0,1,0)*Time.deltaTime*speed);
 	if (Input.GetKey(KeyCode.DownArrow)) transform.Translate(Vector3(0,-1,0)*Time.deltaTime*speed);
 	if (Input.GetKey(KeyCode.LeftArrow)) transform.Translate(Vector3(-1,0,0)*Time.deltaTime*speed);
@@ -88,6 +89,7 @@ function FixedUpdate () {
 	if (turning != 0) {					// Gir de 90 graus
 		var map = GameObject.Find("Map").GetComponent.<MapGenerator>();
 		var forward = map.forward;
+		Debug.Log(forward);
 		if (Mathf.Abs(Vector3.Angle(forward, transform.forward)) >= 90) { 	// Finished turning
 			var newForward = Quaternion.Euler(0,90*turning,0)*forward;
 			map.SetForward(newForward);
@@ -134,13 +136,12 @@ function FixedUpdate () {
 			
 		}*/
 
-		if (Input.GetKey(KeyCode.Q) && CheckTurn(-1)) {
+		if (turnsActivated && Input.GetKey(KeyCode.Q) && CheckTurn(-1)) {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
 			turning = -1;
 			GetComponent.<AudioSource>().Play();
-			
-		} else if (Input.GetKey(KeyCode.E) && CheckTurn(1)) {
+		} else if (turnsActivated && Input.GetKey(KeyCode.E) && CheckTurn(1)) {
 			transform.localEulerAngles.x = 0;
 			transform.localEulerAngles.z = 0;
 			turning = 1;
@@ -195,7 +196,7 @@ function CheckEnd() {
 	var x = 76;
 	var z = -21;
 	var pos = transform.position;
-	if (pos.x >= x && (pos.z >= 14 && pos.z < 26)) {
+	if (pos.x >= x && (pos.z <= -14 && pos.z > -26)) {
 	//yield WaitForSeconds(3);
 		videoFinal.SetActive(true);
 		yield WaitForSeconds(5);
@@ -204,6 +205,7 @@ function CheckEnd() {
 }
 
 function OnCollisionEnter (collision: Collision) {
+	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;
 
     var contact = collision.contacts[0];
 	var rb = this.GetComponent.<Rigidbody>();
@@ -225,8 +227,6 @@ function OnCollisionEnter (collision: Collision) {
  	rb.transform.localEulerAngles = Vector3(0,transform.localEulerAngles.y, 0); 
 
 	rb.angularVelocity = Vector3.zero; 
-
-	
 }
 
 function OnCollisionExit(c: Collision) {

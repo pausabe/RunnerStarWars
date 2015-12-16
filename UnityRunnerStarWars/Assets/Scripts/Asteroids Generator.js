@@ -17,7 +17,7 @@ function Start () {
 	for (var i = 0; i < AsteroidsNumber; i++) {
 		var asteroid = Random.Range(0,AsteroidsPrefab.Length);
 		
-		var position = ship.transform.position + Vector3(Random.Range(-10,10), Random.Range(-10,10), Random.Range(100,2000));
+		var position = Vector3.zero + Vector3(Random.Range(-10,10), Random.Range(-10,10), Random.Range(100,2000));
 		
 		var scale = Random.Range(0, 1.8);
 		
@@ -56,6 +56,12 @@ function Start () {
 }
 
 function Update () {
+
+	if (ship) {
+		if (ship.transform.position.z > 2000) {
+			ship.GetComponent.<Move>().forwardSpeed = 15;
+		}
+	}
 /*
 	var generate = Random.Range(0,1000);
 	if (generate < AsteroidsGenerationRate) {

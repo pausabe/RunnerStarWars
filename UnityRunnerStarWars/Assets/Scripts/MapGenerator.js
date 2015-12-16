@@ -5,14 +5,13 @@ private var TIE_FIGHTER = 0;
 private var DEATH_STAR_WALL = 3;
 
 var ship : GameObject;
-var cam : GameObject;
 
 var x : float;
 
 var prefabs : GameObject[];
 private var laserTurrets = [[0.0, 0.5, 120]];
 private var shootingTurrets = [[-1.8, 0.5,320, -1],[0.0, 0,100, 1]]; // [x,y,z]
-private var tieFighters = [[0.0, 100]]; // [x,z] in which the tie fighter will appear
+private var tieFighters = [[0.0, 2200], [0.0, 2500], [0.0, 2600],[0.0, 2800]]; // [x,z] in which the tie fighter will appear
 private var deathStarWalls = [[-0.2, 0.5, 200, 1.5, 1, 1]]; // [x,y,z,scaleX,scaleY,scaleZ] of the wall
 
 //var turns : GameObject;
@@ -22,12 +21,19 @@ public var girs : Transform[];
 
 var forward : Vector3 = Vector3(0,0,1);
 
+var checkpoint : float = 2000;
+
+var level : int;
+
+static var checkpointReached = false;
+
 var turnDuration : float;
 private var turning = 0;
 private var time : float;
 
 function Start () {
-
+	if (level == 2 && checkpointReached) ship.transform.position.z = checkpoint;
+	if (level == 1) forward = Vector3(1,0,0);
 //	Instantiate(laserTurretsPrefab, Vector3(0.27,0.1,24), Quaternion.identity);
 //	Instantiate(laserTurretsPrefab, Vector3(0.27,0.15,24), Quaternion.identity);
 //	Instantiate(laserTurretsPrefab, Vector3(0.27,0.05,24), Quaternion.identity);
@@ -61,6 +67,8 @@ function Start () {
 
 function Update () {
 	if (ship) {
+		if (level == 2 && ship.transform.position.z >= checkpoint) checkpointReached = true;
+
 		for (var i = 0; i < tieFighters.length; i++) {
 			if (!(tieFighters[i][0] == -1000 && tieFighters[i][1] == -1000)) {
 				if (tieFighters[i][1] <= ship.transform.position.z && ((tieFighters[i][0]-ship.transform.position.x <= x) && (tieFighters[i][0]-ship.transform.position.x >= -x))) {
@@ -112,13 +120,6 @@ function turnShip() {
 	}
 	*/
 	
-	if (Input.GetKeyDown(KeyCode.R)) 
-		Reload();
-}
-
-function Reload() {
-	//yield WaitForSeconds(2);
-	Application.LoadLevel(1);
 }
 
 function SetForward(f : Vector3) {

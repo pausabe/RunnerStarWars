@@ -38,8 +38,9 @@ function FireGun(gun : GameObject) {
 
 	var lineRenderer = shot.GetComponent.<LineRenderer>();
 	var forward = gun.transform.forward;
-	//if (aimsAtShip) forward = ship.transform.position - gun.transform.position;
-	var ray = new Ray(gun.transform.position, gun.transform.forward);
+
+	if (aimsAtShip) forward = ship.transform.position - gun.transform.position;
+	var ray = new Ray(gun.transform.position, forward);
 	//lineRenderer.SetPosition(0, ray.origin);
 	//lineRenderer.SetPosition(1, ray.GetPoint(100));
   //           Vector3 newRotation = new Vector3(target.transform.eulerAngles.x, target.transform.eulerAngles.y, target.transform.eulerAngles.z);
@@ -48,5 +49,5 @@ function FireGun(gun : GameObject) {
     lineRenderer.transform.eulerAngles = gun.transform.eulerAngles;
     
     var rb = shot.GetComponent.<Rigidbody>();
-    rb.velocity = ShotSpeed*gun.transform.forward;
+    rb.velocity = ShotSpeed*forward;
 }
