@@ -189,9 +189,18 @@ function FixedUpdate () {
      	rb.transform.localEulerAngles = Vector3(0,transform.localEulerAngles.y, Mathf.Sin((time-Time.realtimeSinceStartup)*15) * 15); 
 	}
 
-	if (videoFinal) CheckEnd();
+//	if (videoFinal) CheckEnd();
 }
 
+function OnTriggerEnter() {
+	if (videoFinal) {
+		this.GetComponent.<Rigidbody>().velocity = Vector3.zero;
+		moving = false;
+		videoFinal.SetActive(true);
+		yield WaitForSeconds(4);
+		Application.LoadLevel(2);
+	}
+}
 function CheckEnd() {
 	var x = 76;
 	var z = -21;

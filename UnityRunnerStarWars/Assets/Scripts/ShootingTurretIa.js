@@ -12,8 +12,6 @@ var waitingToShoot : float;
  
 var aimZ : float;
 
-var visible = true;
-
 private var time : float;
 private var up : Vector3;
 
@@ -29,7 +27,6 @@ function Start () {
 	} else { 
 		up = Vector3(-1,0,0);
 	}*/
-	GetComponent.<Renderer>().enabled = visible;
 }
 
 function Update () {

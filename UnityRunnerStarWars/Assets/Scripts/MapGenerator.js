@@ -68,7 +68,7 @@ function Start () {
 function Update () {
 	if (ship) {
 		if (level == 2 && ship.transform.position.z >= checkpoint) checkpointReached = true;
-
+		if (level == 2 && checkpointReached) ship.GetComponent.<Move>().forwardSpeed = 15;
 		for (var i = 0; i < tieFighters.length; i++) {
 			if (!(tieFighters[i][0] == -1000 && tieFighters[i][1] == -1000)) {
 				if (tieFighters[i][1] <= ship.transform.position.z && ((tieFighters[i][0]-ship.transform.position.x <= x) && (tieFighters[i][0]-ship.transform.position.x >= -x))) {
