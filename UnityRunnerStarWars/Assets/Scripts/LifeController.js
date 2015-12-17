@@ -22,22 +22,30 @@ function Update () {
 
 function Hit(damage: int) {
 	life -= damage;
+	while (damage > 0) {
+		if (this.tag == "Player") {
+	  		Destroy(GameObject.Find("L" + simpleLife));
+	  		simpleLife--;
+		}
+		damage -= 10;
+	}
 	if (life <= 0) {
 		Explode();
 	} 
 }
 
 function OnCollisionEnter (collision: Collision) {
-	Destroy(GameObject.Find("L" + simpleLife));
-	simpleLife--;
-	
+	if (this.tag == "Player") {
+	  Destroy(GameObject.Find("L" + simpleLife));
+	  simpleLife--;
+	}
 	//Debug.Log(simpleLife);
 	
 	if (this.tag == "Asteroid" && collision.contacts[0].otherCollider.tag != "shot") return;
 	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;
 	if (!(this.tag == "Player" && GetComponent.<ForceController>().protectionOn)) { 
-		if (collision.contacts[0].otherCollider.tag == "Asteroid") Hit(Random.Range(28,35)); 
-		else Hit(Random.Range(8,12));
+		if (collision.contacts[0].otherCollider.tag == "Asteroid") Hit(30); 
+		else Hit(10);
 		if (this.GetComponent.<LifeController>().isAlive()){
 			var explosion = Instantiate(shotExplosion, collision.contacts[0].point, transform.rotation);
 			explosion.transform.parent = transform;
