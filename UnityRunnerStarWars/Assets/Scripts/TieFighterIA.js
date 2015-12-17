@@ -9,6 +9,8 @@ var waitingToShoot : float;
 var waitingToFlyBack : float;
 var waitingToFollow : float;
 
+var indicator : GameObject;
+
 private var time : float = 0;
 
 function Start () {
@@ -98,6 +100,14 @@ function Update() {
 			state = 0;
 		}
 	}
+}
+
+function OnBecameVisible() {
+	indicator.SetActive(false);
+	Debug.Log("asdfa");
+}
+function OnBecameInvisible() {
+	indicator.SetActive(true);
 }
 /*
 function isBehindShip() {

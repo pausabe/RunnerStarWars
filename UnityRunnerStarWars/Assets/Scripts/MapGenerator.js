@@ -6,12 +6,14 @@ private var DEATH_STAR_WALL = 3;
 
 var ship : GameObject;
 
+var indicatorPrefab : GameObject;
+
 var x : float;
 
 var prefabs : GameObject[];
 private var laserTurrets = [[0.0, 0.5, 120]];
 private var shootingTurrets = [[-1.8, 0.5,320, -1],[0.0, 0,100, 1]]; // [x,y,z]
-private var tieFighters = [[0.0, 2350], [0.0, 2630], [0.0, 2750],[0.0, 2950]]; // [x,z] in which the tie fighter will appear
+private var tieFighters = [[0.0, 2350]];//, [0.0, 2630], [0.0, 2750],[0.0, 2950]]; // [x,z] in which the tie fighter will appear
 private var deathStarWalls = [[-0.2, 0.5, 200, 1.5, 1, 1]]; // [x,y,z,scaleX,scaleY,scaleZ] of the wall
 
 //var turns : GameObject;
@@ -72,9 +74,15 @@ function Update () {
 		for (var i = 0; i < tieFighters.length; i++) {
 			if (!(tieFighters[i][0] == -1000 && tieFighters[i][1] == -1000)) {
 				if (tieFighters[i][1] <= ship.transform.position.z && ((tieFighters[i][0]-ship.transform.position.x <= x) && (tieFighters[i][0]-ship.transform.position.x >= -x))) {
-					Instantiate(prefabs[TIE_FIGHTER], Vector3(tieFighters[i][0], ship.transform.position.y, tieFighters[i][1]), this.transform.rotation);
+					var caza = Instantiate(prefabs[TIE_FIGHTER], Vector3(tieFighters[i][0], ship.transform.position.y, tieFighters[i][1]), this.transform.rotation);
 					tieFighters[i][0] = -1000;
 					tieFighters[i][1] = -1000;
+					
+					var indicator = Instantiate(indicatorPrefab, caza.transform.position, Quaternion.identity);
+					indicator.GetComponent.<Indicator>().Fighter = caza;
+					indicator.GetComponent.<Indicator>().Ship = ship;
+					
+					caza.GetComponent.<TieFighterIA>().indicator = indicator;
 				}
 			}
 		}
