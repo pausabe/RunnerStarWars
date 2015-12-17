@@ -46,6 +46,8 @@ public class menuComportamentMenuPause : MonoBehaviour {
 	}
 
 	public void restartLevel(){
+		Time.timeScale = 1;
+
 		Application.LoadLevel (RLevel);
 	}
 
