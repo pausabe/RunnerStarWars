@@ -211,7 +211,7 @@ function CheckEnd() {
 	var pos = transform.position;
 	if (pos.x >= x && (pos.z <= -14 && pos.z > -26)) {
 	//yield WaitForSeconds(3);
-		videoFinal.SetActive(true);
+		//videoFinal.SetActive(true);
 		//yield WaitForSeconds(5);
 		Application.LoadLevel(4);
 	}
