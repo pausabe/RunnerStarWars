@@ -7,12 +7,26 @@ public class menuComportament : MonoBehaviour {
 	public Canvas quitMenu;
 	public Button startText;
 	public Button exitText;
+	public Text noobText;
+	public Text hardText;
+	public Text crazyText;
+	//public Text score;
 
 	// Use this for initialization
 	void Start () {
 		quitMenu = quitMenu.GetComponent<Canvas> ();
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
+		noobText = noobText.GetComponent<Text> ();
+		hardText = hardText.GetComponent<Text> ();
+		crazyText = crazyText.GetComponent<Text> ();
+		//score = score.GetComponent<Text> ();
+
+
+		//score.text = ???????
+
+
+		hard (); //default
 		quitMenu.enabled = false;
 
 	}
@@ -35,5 +49,25 @@ public class menuComportament : MonoBehaviour {
 
 	public void ExitGame(){
 		Application.Quit ();
+	}
+
+
+	//faltaria qe quan cliqes canvia el maxscore segons la dificultat
+	public void noob(){
+		noobText.text = ">noob";
+		hardText.text = "hard";
+		crazyText.text = "crazy";
+	}
+
+	public void hard(){
+		noobText.text = "noob";
+		hardText.text = ">hard";
+		crazyText.text = "crazy";
+	}
+
+	public void crazy(){
+		noobText.text = "noob";
+		hardText.text = "hard";
+		crazyText.text = ">crazy";
 	}
 }
