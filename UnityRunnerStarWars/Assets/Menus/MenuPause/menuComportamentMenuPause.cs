@@ -4,6 +4,9 @@ using System.Collections;
 
 public class menuComportamentMenuPause : MonoBehaviour {
 
+	public int SLevel;
+	public int RLevel;
+
 	private Canvas menu;
 	//public Button restartText;
 	//public Button exitText;
@@ -39,11 +42,11 @@ public class menuComportamentMenuPause : MonoBehaviour {
 	}
 
 	public void StartLevel(){
-		Application.LoadLevel (0);
+		Application.LoadLevel (SLevel);
 	}
 
 	public void restartLevel(){
-		Application.LoadLevel (1);
+		Application.LoadLevel (RLevel);
 	}
 
 	public void ExitGame(){

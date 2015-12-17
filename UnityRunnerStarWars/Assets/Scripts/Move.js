@@ -8,6 +8,7 @@ var forwardSpeed : float;
 var brake : float;
 var bounciness : float;
 
+//var isBegin : boolean = false;
 
 var colliding = false;
 
@@ -23,7 +24,9 @@ var delayBeginMoving : float;
 
 var difficulty : int;
 
-var videoFinal : GameObject;
+//var videoFinal : GameObject;
+
+var nextLevel : int;
 
 private var moving = false;
 
@@ -32,6 +35,7 @@ private var time = 0.0;
 private var turning : int = 0;
 
 function Start () {
+
 	if (difficulty == 1) {
 		forwardSpeed = 10;
 		turnCheckDistance = 8;
@@ -46,7 +50,7 @@ function Start () {
 		forwardPositionCheckTurn = 0;
 	}
 
-	if (videoFinal) videoFinal.SetActive(false);
+	//if (videoFinal) videoFinal.SetActive(false);
 	
 	yield WaitForSeconds(delayBeginMoving);
 
@@ -56,6 +60,7 @@ function Start () {
 }
 
 function Update () {
+	//Debug.Log(moving);
 	if (!moving) return;
 	if (Input.GetKeyDown(KeyCode.Space)) {
 		this.GetComponent.<ShipShoot>().FireLaser();
@@ -192,26 +197,12 @@ function FixedUpdate () {
 //	if (videoFinal) CheckEnd();
 }
 
-function OnTriggerEnter() {
-	if (videoFinal) {
-		this.GetComponent.<Rigidbody>().velocity = Vector3.zero;
-		moving = false;
-		videoFinal.SetActive(true);
-		yield WaitForSeconds(4);
-		Application.LoadLevel(2);
+function OnTriggerEnter(collider : Collider) {
+	if (collider.tag == "Finish") {
+		Application.LoadLevel(nextLevel);
 	}
 }
-function CheckEnd() {
-	var x = 76;
-	var z = -21;
-	var pos = transform.position;
-	if (pos.x >= x && (pos.z <= -14 && pos.z > -26)) {
-	//yield WaitForSeconds(3);
-		videoFinal.SetActive(true);
-		yield WaitForSeconds(5);
-		Application.LoadLevel(2);
-	}
-}
+
 
 function OnCollisionEnter (collision: Collision) {
 	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;
