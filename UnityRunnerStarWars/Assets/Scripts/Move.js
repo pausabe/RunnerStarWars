@@ -10,9 +10,6 @@ var bounciness : float;
 
 var isBegin : boolean = false;
 
-var movieInitial : MovieTexture;
-
-
 var colliding = false;
 
 var turnStep : float;
@@ -199,14 +196,15 @@ function FixedUpdate () {
 }
 
 function OnTriggerEnter() {
-	if (videoFinal) {
-		this.GetComponent.<Rigidbody>().velocity = Vector3.zero;
-		moving = false;
-		videoFinal.SetActive(true);
-		yield WaitForSeconds(4);
-		Application.LoadLevel(2);
-	}
+	//if (videoFinal) {
+		//this.GetComponent.<Rigidbody>().velocity = Vector3.zero;
+		//moving = false;
+		//videoFinal.SetActive(true);
+		//yield WaitForSeconds(4);
+		Application.LoadLevel(4);
+	//}
 }
+
 function CheckEnd() {
 	var x = 76;
 	var z = -21;
@@ -214,8 +212,8 @@ function CheckEnd() {
 	if (pos.x >= x && (pos.z <= -14 && pos.z > -26)) {
 	//yield WaitForSeconds(3);
 		videoFinal.SetActive(true);
-		yield WaitForSeconds(5);
-		Application.LoadLevel(2);
+		//yield WaitForSeconds(5);
+		Application.LoadLevel(4);
 	}
 }
 
