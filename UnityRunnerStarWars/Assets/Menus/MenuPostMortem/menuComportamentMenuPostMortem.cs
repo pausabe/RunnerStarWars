@@ -4,6 +4,9 @@ using System.Collections;
 
 public class menuComportamentMenuPostMortem : MonoBehaviour {
 
+	public int SLevel;
+	public int RLevel;
+
 	//public Canvas menu;
 	//public Button restartText;
 	//public Button exitText;
@@ -37,11 +40,11 @@ public class menuComportamentMenuPostMortem : MonoBehaviour {
 	}
 
 	public void StartLevel(){
-		Application.LoadLevel (0);
+		Application.LoadLevel (SLevel);
 	}
 
 	public void restartLevel(){
-		Application.LoadLevel (1);
+		Application.LoadLevel (RLevel);
 	}
 
 	public void ExitGame(){

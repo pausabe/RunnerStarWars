@@ -4,5 +4,5 @@ public var timeVideo : float;
 
 function Start () {
 	yield WaitForSeconds(timeVideo);
-	gameObject.SetActive(false);
+	//GetComponent<RawImage>().color.a = 0;
 }

@@ -8,6 +8,10 @@ var forwardSpeed : float;
 var brake : float;
 var bounciness : float;
 
+var isBegin : boolean = false;
+
+var movieInitial : MovieTexture;
+
 
 var colliding = false;
 
@@ -32,6 +36,7 @@ private var time = 0.0;
 private var turning : int = 0;
 
 function Start () {
+
 	if (difficulty == 1) {
 		forwardSpeed = 10;
 		turnCheckDistance = 8;
@@ -212,6 +217,7 @@ function CheckEnd() {
 		Application.LoadLevel(2);
 	}
 }
+
 
 function OnCollisionEnter (collision: Collision) {
 	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;

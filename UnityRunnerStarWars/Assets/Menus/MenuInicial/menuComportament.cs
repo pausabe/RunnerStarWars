@@ -30,7 +30,7 @@ public class menuComportament : MonoBehaviour {
 	}
 
 	public void StartLevel(){
-		Application.LoadLevel (4);
+		Application.LoadLevel (1);
 	}
 
 	public void ExitGame(){
