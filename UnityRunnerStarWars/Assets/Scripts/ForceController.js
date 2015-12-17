@@ -21,11 +21,14 @@ function Start () {
 }
 
 function Update () {
-	if (Force >= 100 && Input.GetKey(KeyCode.F)) {
-		SphereProtection.GetComponent.<Renderer>().enabled = true;
-		time = Time.realtimeSinceStartup;
-		protectionOn = true;
-		Force = 0;
+	if (Force >= 100){
+		GameObject.Find("maxPower").GetComponent(Image).color.a = 1;
+		if(Input.GetKey(KeyCode.F)) {
+			SphereProtection.GetComponent.<Renderer>().enabled = true;
+			time = Time.realtimeSinceStartup;
+			protectionOn = true;
+			Force = 0;
+		}
 	}
 	if (protectionOn) { 
 		if(Time.realtimeSinceStartup - time >= timeProtectionOn) {
@@ -37,6 +40,7 @@ function Update () {
 			GameObject.Find("E3").GetComponent(Image).color.a = 0;
 			GameObject.Find("E4").GetComponent(Image).color.a = 0;
 			GameObject.Find("E5").GetComponent(Image).color.a = 0;
+			GameObject.Find("maxPower").GetComponent(Image).color.a = 0;
 			simpleForce = 1;
 			
 		} else {

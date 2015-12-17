@@ -8,7 +8,7 @@ var forwardSpeed : float;
 var brake : float;
 var bounciness : float;
 
-var isBegin : boolean = false;
+//var isBegin : boolean = false;
 
 var colliding = false;
 
@@ -24,7 +24,9 @@ var delayBeginMoving : float;
 
 var difficulty : int;
 
-var videoFinal : GameObject;
+//var videoFinal : GameObject;
+
+var nextLevel : int;
 
 private var moving = false;
 
@@ -48,7 +50,7 @@ function Start () {
 		forwardPositionCheckTurn = 0;
 	}
 
-	if (videoFinal) videoFinal.SetActive(false);
+	//if (videoFinal) videoFinal.SetActive(false);
 	
 	yield WaitForSeconds(delayBeginMoving);
 
@@ -195,25 +197,9 @@ function FixedUpdate () {
 //	if (videoFinal) CheckEnd();
 }
 
-function OnTriggerEnter() {
-	//if (videoFinal) {
-		//this.GetComponent.<Rigidbody>().velocity = Vector3.zero;
-		//moving = false;
-		//videoFinal.SetActive(true);
-		//yield WaitForSeconds(4);
-		//Application.LoadLevel(4);
-	//}
-}
-
-function CheckEnd() {
-	var x = 76;
-	var z = -21;
-	var pos = transform.position;
-	if (pos.x >= x && (pos.z <= -14 && pos.z > -26)) {
-	//yield WaitForSeconds(3);
-		//videoFinal.SetActive(true);
-		//yield WaitForSeconds(5);
-		Application.LoadLevel(4);
+function OnTriggerEnter(collider : Collider) {
+	if (collider.tag == "Finish") {
+		Application.LoadLevel(nextLevel);
 	}
 }
 
