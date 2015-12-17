@@ -50,15 +50,15 @@ function Update () {
 }
 
 function OnTriggerEnter(collider : Collider) {
-	if(simpleForce % 2 == 0 && simpleForce<=10) {
-		GameObject.Find("E" + (simpleForce/2)).GetComponent(Image).color.a = 1;
-	}
-	simpleForce++;
 	
 	
 	
 
 	if (collider.gameObject.tag == "ForceVortex") {
+		if(simpleForce % 2 == 0 && simpleForce<=10) {
+			GameObject.Find("E" + (simpleForce/2)).GetComponent(Image).color.a = 1;
+		}
+		simpleForce++;
 		Force += 10;
 		Destroy(collider.gameObject);
 		AudioSource.PlayClipAtPoint(AbsorveForce, transform.position);

@@ -35,11 +35,6 @@ function Hit(damage: int) {
 }
 
 function OnCollisionEnter (collision: Collision) {
-	if (this.tag == "Player") {
-	  Destroy(GameObject.Find("L" + simpleLife));
-	  simpleLife--;
-	}
-	//Debug.Log(simpleLife);
 	
 	if (this.tag == "Asteroid" && collision.contacts[0].otherCollider.tag != "shot") return;
 	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;

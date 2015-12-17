@@ -8,6 +8,8 @@ var camHeight : float;
 var camDist : float;
 
 function Start () {
+
+	transform.GetChild(0).gameObject.SetActive(false);
 }
 
 
