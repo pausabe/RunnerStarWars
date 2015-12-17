@@ -201,7 +201,7 @@ function OnTriggerEnter() {
 		//moving = false;
 		//videoFinal.SetActive(true);
 		//yield WaitForSeconds(4);
-		Application.LoadLevel(4);
+		//Application.LoadLevel(4);
 	//}
 }
 
