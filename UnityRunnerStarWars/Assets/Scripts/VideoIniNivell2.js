@@ -6,6 +6,7 @@ var nextLevel : int;
 var first : boolean = true;
 
 function Start () {	
+	GetComponent(RectTransform).sizeDelta = new Vector2(Screen.width, Screen.height);
 	GetComponent.<RawImage>().texture = movie1 as MovieTexture;
 	
 	movie1.Play();
