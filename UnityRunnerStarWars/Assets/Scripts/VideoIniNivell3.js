@@ -10,7 +10,7 @@ function Start () {
 }
 
 function Update() {
-	if(!movie.isPlaying) {
+	if(!movie.isPlaying || Input.GetKeyDown(KeyCode.Space)) {
 		movie.Stop();
 		Application.LoadLevel(nextLevel);
 	}
