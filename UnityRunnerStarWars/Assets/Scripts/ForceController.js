@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
 var Force : int;
+private var simpleForce : int;
 
 var timeProtectionOn : float;
 
@@ -13,6 +14,7 @@ private var time : float;
 private var SphereProtection : GameObject;
 
 function Start () {
+	simpleForce=1;
 	SphereProtection = transform.GetChild(9).gameObject;
 	SphereProtection.GetComponent.<Renderer>().enabled = false;
 	protectionOn = false;
@@ -36,6 +38,15 @@ function Update () {
 }
 
 function OnTriggerEnter(collider : Collider) {
+	if(simpleForce % 2 == 0) {
+	Debug.Log(simpleForce);
+		GameObject.Find("E" + (simpleForce/2)).GetComponent(Image).color.a = 1;
+	}
+	simpleForce++;
+	
+	
+	
+
 	if (collider.gameObject.tag == "ForceVortex") {
 		Force += 10;
 		Destroy(collider.gameObject);
