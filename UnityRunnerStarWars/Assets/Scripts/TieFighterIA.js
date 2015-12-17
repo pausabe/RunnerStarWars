@@ -48,7 +48,7 @@ function Update() {
 		var f = (ship.transform.position - this.transform.position);//*0.1;
 		
 		//rigidBody.AddForce(f.x,f.y,0.0);
-		if (ship.transform.position.z > this.transform.position.z + 5) {
+		if (ship.transform.position.z > this.transform.position.z + 2) {
 			rigidBody.velocity.x = f.x;
 			rigidBody.velocity.y = f.y;
 			this.transform.LookAt(ship.transform.position);

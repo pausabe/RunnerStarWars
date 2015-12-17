@@ -61,6 +61,6 @@ function OnTriggerEnter(collider : Collider) {
 		simpleForce++;
 		Force += 10;
 		Destroy(collider.gameObject);
-		AudioSource.PlayClipAtPoint(AbsorveForce, transform.position);
+		AudioSource.PlayClipAtPoint(AbsorveForce, transform.position, 0.4);
 	}
 }

@@ -11,7 +11,7 @@ var x : float;
 var prefabs : GameObject[];
 private var laserTurrets = [[0.0, 0.5, 120]];
 private var shootingTurrets = [[-1.8, 0.5,320, -1],[0.0, 0,100, 1]]; // [x,y,z]
-private var tieFighters = [[0.0, 2200], [0.0, 2500], [0.0, 2600],[0.0, 2800]]; // [x,z] in which the tie fighter will appear
+private var tieFighters = [[0.0, 2350], [0.0, 2630], [0.0, 2750],[0.0, 2950]]; // [x,z] in which the tie fighter will appear
 private var deathStarWalls = [[-0.2, 0.5, 200, 1.5, 1, 1]]; // [x,y,z,scaleX,scaleY,scaleZ] of the wall
 
 //var turns : GameObject;
