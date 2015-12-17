@@ -61,6 +61,7 @@ function Start () {
 }
 
 function Update () {
+	//Debug.Log(moving);
 	if (!moving) return;
 	if (Input.GetKeyDown(KeyCode.Space)) {
 		this.GetComponent.<ShipShoot>().FireLaser();
