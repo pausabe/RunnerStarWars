@@ -31,8 +31,8 @@ function Update () {
 }
 
 function DisplayMessages(messages : String[]) {
+	if (messagesTime.Length != messages.Length) return;
 	for (var i = 0; i < messages.Length; i++) {
-	Debug.Log(messagesTime);
 		if (Time.realtimeSinceStartup - time > messagesTime[i][0]) {
 			canvas.enabled = true;
 			AnimateText(messages[i]);

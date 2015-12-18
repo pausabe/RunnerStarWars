@@ -102,6 +102,7 @@ function Update () {
 }
 
 function FixedUpdate () {
+	if (Input.GetKeyDown(KeyCode.F4)) transform.position.z = 1920;
 	if (!moving) return;
 	
 /*	if (Input.GetKey(KeyCode.UpArrow)) transform.Translate(Vector3(0,1,0)*Time.deltaTime*speed);

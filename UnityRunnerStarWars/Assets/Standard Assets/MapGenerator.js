@@ -23,7 +23,7 @@ public var girs : Transform[];
 
 var forward : Vector3 = Vector3(0,0,1);
 
-var checkpoint : float = 1980;
+var checkpoint : float = 1940;
 
 var level : int;
 
