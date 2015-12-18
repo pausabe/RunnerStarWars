@@ -10,6 +10,8 @@ public class menuComportament : MonoBehaviour {
 	public Text noobText;
 	public Text hardText;
 	public Text crazyText;
+
+	public GameObject difficultyHolder;
 	//public Text score;
 
 	// Use this for initialization
@@ -25,9 +27,11 @@ public class menuComportament : MonoBehaviour {
 
 		//score.text = ???????
 
+		difficultyHolder = GameObject.Find("DifficultyHolder");
 
 		hard (); //default
 		quitMenu.enabled = false;
+
 
 	}
 
@@ -48,7 +52,7 @@ public class menuComportament : MonoBehaviour {
 	}
 
 	public void ExitGame(){
-		Application.Quit ();
+		Application.Quit();
 	}
 
 
@@ -57,17 +61,23 @@ public class menuComportament : MonoBehaviour {
 		noobText.text = ">noob";
 		hardText.text = "hard";
 		crazyText.text = "crazy";
+
+		DifficultyHolder.difficulty = 2;
 	}
 
 	public void hard(){
 		noobText.text = "noob";
 		hardText.text = ">hard";
 		crazyText.text = "crazy";
+		DifficultyHolder.difficulty = 2;
+
 	}
 
 	public void crazy(){
 		noobText.text = "noob";
 		hardText.text = "hard";
 		crazyText.text = ">crazy";
+		DifficultyHolder.difficulty = 2;
+
 	}
 }

@@ -18,7 +18,7 @@ function Start () {//each time the scene is reloaded
 
 function Update () {
 	Debug.Log("this: " + thisScore + " total: " + totalScore);
-	if(!GameObject.Find("X-wing").GetComponent.<Move>().moving) return;
+	if(Time.timeScale == 0) return;
 	if (count == 10) {
 		if(GameObject.Find("X-wing")) thisScore ++;
 		else thisScore = 0;

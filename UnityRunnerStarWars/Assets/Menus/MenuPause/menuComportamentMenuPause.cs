@@ -20,6 +20,7 @@ public class menuComportamentMenuPause : MonoBehaviour {
 		//exitText = exitText.GetComponent<Button> ();
 		//menu.enabled = false;
 
+		GameObject.Find ("X-wing").GetComponent<Move> ().moving = false;
 	}
 	
 
@@ -33,12 +34,14 @@ public class menuComportamentMenuPause : MonoBehaviour {
 		//menu.enabled = false;
 		//restartText.enabled = true;
 		//exitText.enabled = true;
+
 	}
 
 	public void resumeLevel(){
 		//gameObject.SetActive(false);
 		Time.timeScale = 1;
 		menu.enabled = false;
+		GameObject.Find ("X-wing").GetComponent<Move> ().moving = true;
 	}
 
 	public void StartLevel(){

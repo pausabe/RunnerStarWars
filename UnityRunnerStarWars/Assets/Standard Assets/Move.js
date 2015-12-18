@@ -37,7 +37,7 @@ private var turning : int = 0;
 function Start () {
 	
 	var level = GameObject.Find("Map").GetComponent.<MapGenerator>().level;
-	
+	difficulty = GameObject.Find("DifficultyHolder").GetComponent.<DifficultyHolder>().difficulty;
 	if (level == 1) {
 		if (difficulty == 1) {
 			forwardSpeed = 10;

@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-static var difficulty;
+static var difficulty : int;
 
 function Start () {
 
