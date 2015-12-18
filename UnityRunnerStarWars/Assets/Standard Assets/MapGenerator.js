@@ -23,7 +23,7 @@ public var girs : Transform[];
 
 var forward : Vector3 = Vector3(0,0,1);
 
-var checkpoint : float = 2000;
+var checkpoint : float = 1950;
 
 var level : int;
 
@@ -87,6 +87,10 @@ function Update () {
 			}
 		}
 	}
+	
+	if (Input.GetKeyDown(KeyCode.F1)) Application.LoadLevel(3);
+	if (Input.GetKeyDown(KeyCode.F2)) Application.LoadLevel(5);
+	if (Input.GetKeyDown(KeyCode.F3)) Application.LoadLevel(7);
 	/*
 	for (i = 0; i < girs.length; i++) {
 		if (!(girs[i].position.x == -1000 && girs[i].position.z == -1000)) {

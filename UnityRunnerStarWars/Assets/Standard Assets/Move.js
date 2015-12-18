@@ -41,18 +41,49 @@ function Start () {
 	if (level == 1) {
 		if (difficulty == 1) {
 			forwardSpeed = 10;
-			turnCheckDistance = 12;
-			forwardPositionCheckTurn = 4;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 0;
 		} else if (difficulty == 2) {
 			forwardSpeed = 15;
-			turnCheckDistance = 12;
-			forwardPositionCheckTurn = 6;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 2;
 		} else if (difficulty == 3) {
 			forwardSpeed = 20;
 			turnCheckDistance = 0;
 			forwardPositionCheckTurn = 0;
 		}
 	}
+	else if (level == 2) {
+		if (difficulty == 1) {
+			forwardSpeed = 15;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 0;
+		} else if (difficulty == 2) {
+			forwardSpeed = 25;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 2;
+		} else if (difficulty == 3) {
+			forwardSpeed = 30;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 0;
+		}
+	}	
+	else if (level == 3) {
+		if (difficulty == 1) {
+			forwardSpeed = 10;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 0;
+		} else if (difficulty == 2) {
+			forwardSpeed = 15;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 2;
+		} else if (difficulty == 3) {
+			forwardSpeed = 20;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 0;
+		}
+	}
+
 	//if (videoFinal) videoFinal.SetActive(false);
 	
 	yield WaitForSeconds(delayBeginMoving);
@@ -242,6 +273,7 @@ function CheckTurn(turn : int) {
 	var map = GameObject.Find("Map").GetComponent.<MapGenerator>();
 	var forward = map.forward;
 	var newForward = Quaternion.Euler(0,90*turn,0)*forward;
+
 	if (Physics.Raycast(transform.position+transform.TransformDirection(0,0,forwardPositionCheckTurn), newForward, turnCheckDistance))	return false;
 	else return true;
 }
