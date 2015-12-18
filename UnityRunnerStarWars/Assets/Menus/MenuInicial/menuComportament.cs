@@ -62,7 +62,7 @@ public class menuComportament : MonoBehaviour {
 		hardText.text = "hard";
 		crazyText.text = "crazy";
 
-		DifficultyHolder.difficulty = 2;
+		DifficultyHolder.difficulty = 1;
 	}
 
 	public void hard(){
@@ -77,7 +77,7 @@ public class menuComportament : MonoBehaviour {
 		noobText.text = "noob";
 		hardText.text = "hard";
 		crazyText.text = ">crazy";
-		DifficultyHolder.difficulty = 2;
+		DifficultyHolder.difficulty = 3;
 
 	}
 }
