@@ -19,7 +19,10 @@ function Start () {//each time the scene is reloaded
 function Update () {
 	Debug.Log("this: " + thisScore + " total: " + totalScore);
 	if(Time.timeScale == 0) return;
-	if (count == 10) {
+	var maxCount = 16;
+	if (DifficultyHolder.difficulty == 2) maxCount = 8;
+	else if (DifficultyHolder.difficulty == 3) maxCount = 4;
+	if (count == maxCount) {
 		if(GameObject.Find("X-wing")) thisScore ++;
 		
 	
