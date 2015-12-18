@@ -51,7 +51,7 @@ function Update () {
 		z = Mathf.Abs(point.z - guns.transform.position.z);
 		angle = Mathf.Atan(z/x);
 
-		guns.transform.localEulerAngles.z = angle*Mathf.Rad2Deg - angleVariationInWall;
+		guns.transform.eulerAngles.x = angle*Mathf.Rad2Deg - angleVariationInWall;
 		//guns.transform.localEulerAngles.x = Mathf.Asin(shipSpeed/shotSpeed);
 	}	
 		
@@ -61,7 +61,7 @@ function Update () {
 	} else { 
 		point.x = this.transform.position.x;
 	}
-	//Debug.Log(point);}
+	
 	this.transform.LookAt(point, up);
 	//this.transform.rotation.eulerAngles.z = eulerAngles;
 	//guns.transform.LookAt(ship.transform.position);

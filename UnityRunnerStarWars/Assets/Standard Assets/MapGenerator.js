@@ -34,6 +34,7 @@ private var turning = 0;
 private var time : float;
 
 function Start () {
+	Time.timeScale = 1;
 	if (level == 2 && checkpointReached) ship.transform.position.z = checkpoint;
 	if (level == 1) forward = Vector3(1,0,0);
 //	Instantiate(laserTurretsPrefab, Vector3(0.27,0.1,24), Quaternion.identity);
