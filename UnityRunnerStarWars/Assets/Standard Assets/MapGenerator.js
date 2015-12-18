@@ -13,7 +13,7 @@ var x : float;
 var prefabs : GameObject[];
 private var laserTurrets = [[0.0, 0.5, 120]];
 private var shootingTurrets = [[-1.8, 0.5,320, -1],[0.0, 0,100, 1]]; // [x,y,z]
-private var tieFighters = [[0.0, 2350]];//, [0.0, 2630], [0.0, 2750],[0.0, 2950]]; // [x,z] in which the tie fighter will appear
+private var tieFighters = [[0.0, 2350], [0.0, 2530], [0.0, 2700],[0.0, 2900]]; // [x,z] in which the tie fighter will appear
 private var deathStarWalls = [[-0.2, 0.5, 200, 1.5, 1, 1]]; // [x,y,z,scaleX,scaleY,scaleZ] of the wall
 
 //var turns : GameObject;
@@ -35,7 +35,9 @@ private var time : float;
 
 function Start () {
 	Time.timeScale = 1;
-	if (level == 2 && checkpointReached) ship.transform.position.z = checkpoint;
+	if (level == 2 && checkpointReached) {
+		 ship.transform.position.z = checkpoint;
+	}
 	if (level == 1) forward = Vector3(1,0,0);
 //	Instantiate(laserTurretsPrefab, Vector3(0.27,0.1,24), Quaternion.identity);
 //	Instantiate(laserTurretsPrefab, Vector3(0.27,0.15,24), Quaternion.identity);

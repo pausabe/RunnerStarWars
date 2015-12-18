@@ -39,7 +39,7 @@ function OnCollisionEnter (collision: Collision) {
 	if (this.tag == "Asteroid" && collision.contacts[0].otherCollider.tag != "shot") return;
 	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;
 	if (!(this.tag == "Player" && GetComponent.<ForceController>().protectionOn)) { 
-		if (collision.contacts[0].otherCollider.tag == "Asteroid") Hit(30); 
+		if (collision.contacts[0].otherCollider.tag == "Asteroid") Hit(10); 
 		else Hit(10);
 		if (this.GetComponent.<LifeController>().isAlive()){
 			var explosion = Instantiate(shotExplosion, collision.contacts[0].point, transform.rotation);

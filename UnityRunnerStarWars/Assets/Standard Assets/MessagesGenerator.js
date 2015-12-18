@@ -18,7 +18,7 @@ function Start () {
 	canvas = GetComponent.<Canvas>();
 	canvas.enabled = false;
 	if (level == 1)	messagesTime = messagesTime1;
-	else if (level == 2) messagesTime = messagesTime2;
+	else if (level == 2 && !MapGenerator.checkpointReached) messagesTime = messagesTime2;
 	else if (level == 3) messagesTime = messagesTime3;
 
 }

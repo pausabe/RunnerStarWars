@@ -49,6 +49,9 @@ function Update() {
 		
 		var f = (ship.transform.position - this.transform.position);//*0.1;
 		
+		if (ship.transform.position.z > this.transform.position.z + 5 ){//&& GetComponent.<AudioSource>()) {
+			GetComponent.<AudioSource>().Play();
+		}
 		//rigidBody.AddForce(f.x,f.y,0.0);
 		if (ship.transform.position.z > this.transform.position.z + 2) {
 			rigidBody.velocity.x = f.x;
@@ -104,7 +107,6 @@ function Update() {
 
 function OnBecameVisible() {
 	indicator.SetActive(false);
-	Debug.Log("asdfa");
 }
 function OnBecameInvisible() {
 	indicator.SetActive(true);

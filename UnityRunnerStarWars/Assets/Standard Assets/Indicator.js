@@ -22,7 +22,7 @@ function Update () {
 	
 	var aux = Mathf.Clamp((50-distance)/50,0.0,50);
 	
-	var mida = Mathf.Lerp(0.03,0,distance/10);
+	var mida = Mathf.Lerp(0.03,0,distance/30);
 	
 	var line = GetComponent.<LineRenderer>();
 	var point1 = ray.GetPoint(0.2);
