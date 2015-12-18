@@ -28,7 +28,7 @@ function Start () {
 		var ast = Instantiate(AsteroidsPrefab[asteroid], position, Quaternion.identity);
 		
 		ast.transform.localScale += Vector3(scale,scale,scale);
-		var force = Vector3(Random.Range(-50,50), Random.Range(-50,50), Random.Range(-50,50));
+		var force = Vector3(Random.Range(-20,20), Random.Range(-20,20), Random.Range(-20,20));
 		ast.GetComponent.<Rigidbody>().AddForce(force);
 		var torque = Vector3(Random.Range(-100,100), Random.Range(-100,100), Random.Range(-30,30));
 		ast.GetComponent.<Rigidbody>().AddTorque(torque);
