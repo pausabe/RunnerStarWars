@@ -12,18 +12,18 @@ function Start () {//each time the scene is reloaded
 	text = GetComponent.<Canvas>();
 	
 	count = 0;
-	text.transform.GetChild(0).GetComponent.<Text>().text = thisScore + "";
+	text.transform.GetChild(0).GetComponent.<Text>().text = totalScore + "";
 
 }
 
 function Update () {
 	Debug.Log("this: " + thisScore + " total: " + totalScore);
-	
+	if(!GameObject.Find("X-wing").GetComponent.<Move>().moving) return;
 	if (count == 10) {
 		if(GameObject.Find("X-wing")) thisScore ++;
 		else thisScore = 0;
 	
-		text.transform.GetChild(0).GetComponent.<Text>().text = thisScore + "";
+		text.transform.GetChild(0).GetComponent.<Text>().text = totalScore + thisScore + "";
 		count = 0;
 	} else count++;
 }

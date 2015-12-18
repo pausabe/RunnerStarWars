@@ -28,28 +28,31 @@ var difficulty : int;
 
 var nextLevel : int;
 
-private var moving = false;
+var moving = false;
 
 private var time = 0.0;
 
 private var turning : int = 0;
 
 function Start () {
-
-	if (difficulty == 1) {
-		forwardSpeed = 10;
-		turnCheckDistance = 8;
-		forwardPositionCheckTurn = 4;
-	} else if (difficulty == 2) {
-		forwardSpeed = 15;
-		turnCheckDistance = 8;
-		forwardPositionCheckTurn = 6;
-	} else if (difficulty == 3) {
-		forwardSpeed = 20;
-		turnCheckDistance = 0;
-		forwardPositionCheckTurn = 0;
+	
+	var level = GameObject.Find("Map").GetComponent.<MapGenerator>().level;
+	
+	if (level == 1) {
+		if (difficulty == 1) {
+			forwardSpeed = 10;
+			turnCheckDistance = 8;
+			forwardPositionCheckTurn = 4;
+		} else if (difficulty == 2) {
+			forwardSpeed = 15;
+			turnCheckDistance = 8;
+			forwardPositionCheckTurn = 6;
+		} else if (difficulty == 3) {
+			forwardSpeed = 20;
+			turnCheckDistance = 0;
+			forwardPositionCheckTurn = 0;
+		}
 	}
-
 	//if (videoFinal) videoFinal.SetActive(false);
 	
 	yield WaitForSeconds(delayBeginMoving);
