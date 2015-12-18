@@ -63,7 +63,10 @@ function OnTriggerEnter(collider: Collider) {
 	} else if (level == 2) {
 		time = Time.realtimeSinceStartup;
 		messagesTime = [[1.0, 6], [8,1.5], [10.0,3], [15.0,4],[20.0,4], [27.0,4]];
-		messages2 = ["Perfect! We are getting closer, you will arrive to the space launcher shortly", "Wait...", "What are those dots?", "Red one, you have 4 T-Fighters onto you", "Don't stand still! Move!", "Let them pass you and shoot them"];
+		var tfighters = 4;
+		if (DifficultyHolder.difficulty == 2) tfighters = 5;
+		else if (DifficultyHolder.difficulty == 3) tfighters = 6;
+		messages2 = ["Perfect! We are getting closer, you will arrive to the space launcher shortly", "Wait...", "What are those dots?", "Red one, you have " + tfighters + " Tie-Fighters onto you", "Don't stand still! Move!", "Let them pass you and shoot them"];
 	}
 
 }

@@ -254,6 +254,8 @@ function OnCollisionEnter (collision: Collision) {
 	if (!(contact.otherCollider.gameObject.tag == "shot"))
 		rb.AddRelativeForce(Vector3(bounciness*Vector3.Normalize(contact.normal).x,bounciness*Vector3.Normalize(contact.normal).y,0.0), UnityEngine.ForceMode.Impulse);
 	rb.angularVelocity = Vector3.zero; 
+	
+	if (contact.otherCollider.gameObject.tag == "Limit") return;
 
 	colliding = true;
 	time = Time.realtimeSinceStartup;

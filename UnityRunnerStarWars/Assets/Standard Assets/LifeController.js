@@ -35,7 +35,10 @@ function Hit(damage: int) {
 }
 
 function OnCollisionEnter (collision: Collision) {
-	
+	if (collision.contacts[0].otherCollider.tag == "Limit") {
+		return;
+	}
+
 	if (this.tag == "Asteroid" && collision.contacts[0].otherCollider.tag != "shot") return;
 	if (collision.contacts[0].otherCollider.tag == "Laser" && !collision.contacts[0].otherCollider.GetComponent.<LaserTurret>().line.enabled) return;
 	if (!(this.tag == "Player" && GetComponent.<ForceController>().protectionOn)) { 
