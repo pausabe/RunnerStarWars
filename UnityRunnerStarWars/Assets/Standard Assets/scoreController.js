@@ -21,7 +21,7 @@ function Update () {
 	if(Time.timeScale == 0) return;
 	if (count == 10) {
 		if(GameObject.Find("X-wing")) thisScore ++;
-		else thisScore = 0;
+		
 	
 		text.transform.GetChild(0).GetComponent.<Text>().text = totalScore + thisScore + "";
 		count = 0;

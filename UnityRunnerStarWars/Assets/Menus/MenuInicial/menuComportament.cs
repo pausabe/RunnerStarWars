@@ -12,7 +12,6 @@ public class menuComportament : MonoBehaviour {
 	public Text crazyText;
 
 	public GameObject difficultyHolder;
-	//public Text score;
 
 	// Use this for initialization
 	void Start () {
@@ -22,16 +21,9 @@ public class menuComportament : MonoBehaviour {
 		noobText = noobText.GetComponent<Text> ();
 		hardText = hardText.GetComponent<Text> ();
 		crazyText = crazyText.GetComponent<Text> ();
-		//score = score.GetComponent<Text> ();
-
-
-		//score.text = ???????
-
-		difficultyHolder = GameObject.Find("DifficultyHolder");
 
 		hard (); //default
 		quitMenu.enabled = false;
-
 
 	}
 

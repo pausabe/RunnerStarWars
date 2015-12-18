@@ -41,11 +41,11 @@ function Start () {
 	if (level == 1) {
 		if (difficulty == 1) {
 			forwardSpeed = 10;
-			turnCheckDistance = 8;
+			turnCheckDistance = 12;
 			forwardPositionCheckTurn = 4;
 		} else if (difficulty == 2) {
 			forwardSpeed = 15;
-			turnCheckDistance = 8;
+			turnCheckDistance = 12;
 			forwardPositionCheckTurn = 6;
 		} else if (difficulty == 3) {
 			forwardSpeed = 20;

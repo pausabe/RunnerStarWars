@@ -3,6 +3,6 @@
 
  function Update()
  {
- 	var score = 999; //aixo s'ha de canviar
+	var score = GameObject.Find("Score").GetComponent.<scoreController> ().thisScore + scoreController.totalScore;
    	GetComponent.<Text>().text = "Score: " + score;
  }

@@ -22,7 +22,6 @@ public class menuComportamentMenuPostMortem : MonoBehaviour {
 		//gameObject.SetActive(false);
 	}
 	
-
 	public void ExitPress(){
 		//menu.enabled = true;
 		//restartText.enabled = false;
