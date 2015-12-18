@@ -198,10 +198,10 @@ function FixedUpdate () {
 }
 
 function OnTriggerEnter(collider : Collider) {
-	var scoreGOController = GameObject.Find("scoreGO").GetComponent(scoreController);
+	var score = GameObject.Find("Score").GetComponent(scoreController);
 	if (collider.tag == "Finish") {
-		scoreGOController.totalScore += scoreGOController.thisScore;
-		
+		score.totalScore += score.thisScore;
+		Debug.Log(score.totalScore);
 		Application.LoadLevel(nextLevel);
 	}
 }
